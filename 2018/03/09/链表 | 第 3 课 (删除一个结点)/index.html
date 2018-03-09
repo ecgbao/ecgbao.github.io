@@ -81,13 +81,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="跳跳魔王的技术博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="在单链表章节我们已经讨论了 链表的介绍 和 链表的插入。 我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。要从链表里删除一个结点, 我们需要以下步骤。  找到待删结点的前驱结点。 修改前驱结点的Next. 释放被删除结点的内存。    建议: 在查看解决方案前，请自己尝试练习。  因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="删除一个结点">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/链表 | 第 3 课 (删除一个结点)/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
+<meta property="og:description" content="在单链表章节我们已经讨论了 链表的介绍 和 链表的插入。 我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。要从链表里删除一个结点, 我们需要以下步骤。  找到待删结点的前驱结点。 修改前驱结点的Next. 释放被删除结点的内存。    建议: 在查看解决方案前，请自己尝试练习。  因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png">
+<meta property="og:updated_time" content="2018-03-09T05:00:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跳跳魔王的技术博客">
+<meta name="twitter:title" content="删除一个结点">
+<meta name="twitter:description" content="在单链表章节我们已经讨论了 链表的介绍 和 链表的插入。 我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。要从链表里删除一个结点, 我们需要以下步骤。  找到待删结点的前驱结点。 修改前驱结点的Next. 释放被删除结点的内存。    建议: 在查看解决方案前，请自己尝试练习。  因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要">
+<meta name="twitter:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png">
 
 
 
@@ -117,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/09/链表 | 第 3 课 (删除一个结点)/"/>
 
 
 
 
 
-  <title>跳跳魔王的技术博客</title>
+  <title>删除一个结点 | 跳跳魔王的技术博客</title>
   
 
 
@@ -142,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +221,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/链表 | 第 3 课 (删除一个结点)/" itemprop="url">删除一个结点</a></h1>
+          <h1 class="post-title" itemprop="name headline">删除一个结点</h1>
         
 
         <div class="post-meta">
@@ -300,9 +303,7 @@
       
 
       
-        
-          
-            <p>在单链表章节我们已经讨论了 <a href="">链表的介绍</a> 和 <a href="">链表的插入</a>。</p>
+        <p>在单链表章节我们已经讨论了 <a href="">链表的介绍</a> 和 <a href="">链表的插入</a>。</p>
 <p>我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。<br>要从链表里删除一个结点, 我们需要以下步骤。</p>
 <ol>
 <li>找到待删结点的前驱结点。</li>
@@ -318,8 +319,6 @@
 <h3 id="IDE运行结果"><a href="#IDE运行结果" class="headerlink" title="IDE运行结果"></a>IDE运行结果</h3><p>输出:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Created Linked List:</span><br><span class="line"> 2  3  1  7</span><br><span class="line">Linked List after Deletion of 1:</span><br><span class="line"> 2  3  7</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -336,12 +335,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -351,10 +350,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +362,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -382,8 +386,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -432,6 +445,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是C-C-代码"><span class="nav-number">1.</span> <span class="nav-text">下面是C/C++代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE运行结果"><span class="nav-number">2.</span> <span class="nav-text">IDE运行结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -569,6 +598,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
