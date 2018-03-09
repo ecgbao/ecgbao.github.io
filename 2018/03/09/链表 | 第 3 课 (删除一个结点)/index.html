@@ -89,7 +89,7 @@
 <meta property="og:description" content="在单链表章节我们已经讨论了 链表的介绍 和 链表的插入。 我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。要从链表里删除一个结点, 我们需要以下步骤。  找到待删结点的前驱结点。 修改前驱结点的Next. 释放被删除结点的内存。    建议: 在查看解决方案前，请自己尝试练习。  因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png">
-<meta property="og:updated_time" content="2018-03-09T05:00:12.000Z">
+<meta property="og:updated_time" content="2018-03-09T05:45:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="删除一个结点">
 <meta name="twitter:description" content="在单链表章节我们已经讨论了 链表的介绍 和 链表的插入。 我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。要从链表里删除一个结点, 我们需要以下步骤。  找到待删结点的前驱结点。 修改前驱结点的Next. 释放被删除结点的内存。    建议: 在查看解决方案前，请自己尝试练习。  因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要">
@@ -316,7 +316,7 @@
 </blockquote>
 <p>因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要释放被删除结点的内存。</p>
 <h3 id="下面是C-C-代码"><a href="#下面是C-C-代码" class="headerlink" title="下面是C/C++代码"></a>下面是C/C++代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">// 下面的代码已经通过编译</span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">// 结点定义</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">/* 引用链表的头结点和一个整数值, 在链表前面插入一个新的结点 */</span><br><span class="line">void push(struct Node** head_ref, int new_data)</span><br><span class="line">&#123;</span><br><span class="line">    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));</span><br><span class="line">    new_node-&gt;data  = new_data;</span><br><span class="line">    new_node-&gt;next = (*head_ref);</span><br><span class="line">    (*head_ref)    = new_node;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 引用链表的头结点和一个 key, 然后删除首次遇见的结点 */</span><br><span class="line">void deleteNode(struct Node **head_ref, int key)</span><br><span class="line">&#123;</span><br><span class="line">    // 保存头结点</span><br><span class="line">    struct Node* temp = *head_ref, *prev;</span><br><span class="line"> </span><br><span class="line">    // 如果要删除的结点恰巧是头结点</span><br><span class="line">    if (temp != NULL &amp;&amp; temp-&gt;data == key)</span><br><span class="line">    &#123;</span><br><span class="line">        *head_ref = temp-&gt;next;   // 修改头结点</span><br><span class="line">        free(temp);               // 释放头结点</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    // 查找要删除的 key, 因为我们要修改&apos;prev-&gt;next&apos;，所以需要跟踪前驱结点</span><br><span class="line">    while (temp != NULL &amp;&amp; temp-&gt;data != key)</span><br><span class="line">    &#123;</span><br><span class="line">        prev = temp;</span><br><span class="line">        temp = temp-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    // 如果链表里没有这个 key</span><br><span class="line">    if (temp == NULL) return;</span><br><span class="line"> </span><br><span class="line">    // 断开结点</span><br><span class="line">    prev-&gt;next = temp-&gt;next;</span><br><span class="line"> </span><br><span class="line">    free(temp);  // 释放内存</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 下面的函数打印链表的内容</span><br><span class="line">void printList(struct Node *node)</span><br><span class="line">&#123;</span><br><span class="line">    while (node != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot; %d &quot;, node-&gt;data);</span><br><span class="line">        node = node-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 测试函数*/</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    /* 刚开始的空链表 */</span><br><span class="line">    struct Node* head = NULL;</span><br><span class="line"> </span><br><span class="line">    push(&amp;head, 7);</span><br><span class="line">    push(&amp;head, 1);</span><br><span class="line">    push(&amp;head, 3);</span><br><span class="line">    push(&amp;head, 2);</span><br><span class="line"> </span><br><span class="line">    puts(&quot;Created Linked List: &quot;);</span><br><span class="line">    printList(head);</span><br><span class="line">    deleteNode(&amp;head, 1);</span><br><span class="line">    puts(&quot;\nLinked List after Deletion of 1: &quot;);</span><br><span class="line">    printList(head);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="IDE运行结果"><a href="#IDE运行结果" class="headerlink" title="IDE运行结果"></a>IDE运行结果</h3><p>输出:</p>
+<p>输出:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Created Linked List:</span><br><span class="line"> 2  3  1  7</span><br><span class="line">Linked List after Deletion of 1:</span><br><span class="line"> 2  3  7</span><br></pre></td></tr></table></figure>
 
       
@@ -338,6 +338,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/09/链表-第-1-课（链表的介绍）/" rel="prev" title="链表 |第 1 课（链表的介绍）">
+                链表 |第 1 课（链表的介绍） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -411,7 +427,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -455,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是C-C-代码"><span class="nav-number">1.</span> <span class="nav-text">下面是C/C++代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE运行结果"><span class="nav-number">2.</span> <span class="nav-text">IDE运行结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是C-C-代码"><span class="nav-number">1.</span> <span class="nav-text">下面是C/C++代码</span></a></li></ol></div>
             
 
           </div>
