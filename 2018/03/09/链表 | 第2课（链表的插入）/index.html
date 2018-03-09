@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="跳跳魔王的技术博客" type="application/atom+xml" />
 
@@ -81,13 +83,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="跳跳魔王的技术博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="在先前的文章里，我们已经简单介绍了链表。我们也创建了一个带有3个结点的简单链表，然后讨论了一下如何遍历它们。 这篇文章涉及到的所有程序均使用下面的结点表示链表。 123456// 链表结点struct Node&amp;#123;  int data;  struct Node *next;&amp;#125;; 这篇文章里, 会讨论如何在链表里插入结点。一般来说，有3个方法来添加结点。  在链表的首部。 在一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表| 第2课（链表的插入）">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/链表 | 第2课（链表的插入）/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
+<meta property="og:description" content="在先前的文章里，我们已经简单介绍了链表。我们也创建了一个带有3个结点的简单链表，然后讨论了一下如何遍历它们。 这篇文章涉及到的所有程序均使用下面的结点表示链表。 123456// 链表结点struct Node&amp;#123;  int data;  struct Node *next;&amp;#125;; 这篇文章里, 会讨论如何在链表里插入结点。一般来说，有3个方法来添加结点。  在链表的首部。 在一个">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_at_start.png">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_middle.png">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_last.png">
+<meta property="og:updated_time" content="2018-03-09T06:42:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跳跳魔王的技术博客">
+<meta name="twitter:title" content="链表| 第2课（链表的插入）">
+<meta name="twitter:description" content="在先前的文章里，我们已经简单介绍了链表。我们也创建了一个带有3个结点的简单链表，然后讨论了一下如何遍历它们。 这篇文章涉及到的所有程序均使用下面的结点表示链表。 123456// 链表结点struct Node&amp;#123;  int data;  struct Node *next;&amp;#125;; 这篇文章里, 会讨论如何在链表里插入结点。一般来说，有3个方法来添加结点。  在链表的首部。 在一个">
+<meta name="twitter:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_at_start.png">
 
 
 
@@ -117,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/09/链表 | 第2课（链表的插入）/"/>
 
 
 
 
 
-  <title>跳跳魔王的技术博客</title>
+  <title>链表| 第2课（链表的插入） | 跳跳魔王的技术博客</title>
   
 
 
@@ -142,8 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/链表 | 第2课（链表的插入）/" itemprop="url">链表| 第2课（链表的插入）</a></h1>
+          <h1 class="post-title" itemprop="name headline">链表| 第2课（链表的插入）</h1>
         
 
         <div class="post-meta">
@@ -300,9 +307,7 @@
       
 
       
-        
-          
-            <p>在先前的文章里，我们已经简单介绍了<a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8-%E7%AC%AC-1-%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%89/" target="_blank" rel="noopener">链表</a>。我们也创建了一个带有3个结点的简单链表，然后讨论了一下如何遍历它们。</p>
+        <p>在先前的文章里，我们已经简单介绍了<a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8-%E7%AC%AC-1-%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%89/" target="_blank" rel="noopener">链表</a>。我们也创建了一个带有3个结点的简单链表，然后讨论了一下如何遍历它们。</p>
 <p><strong><em>这篇文章涉及到的所有程序均使用下面的结点表示链表。</em></strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 链表结点</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>这篇文章里, 会讨论如何在链表里插入结点。一般来说，有3个方法来添加结点。</p>
@@ -328,8 +333,6 @@
 <p>这个函数可以优化到时间复杂度为 O(1)，方法是使用一个尾部指针。</p>
 <h3 id="下面是一个完整的程序，使用上面所有的函数创建一个链表"><a href="#下面是一个完整的程序，使用上面所有的函数创建一个链表" class="headerlink" title="下面是一个完整的程序，使用上面所有的函数创建一个链表"></a>下面是一个完整的程序，使用上面所有的函数创建一个链表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">// 链表结点</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">/* 指向头结点的指针和一个整数, 在链表前面插入一个新的结点. */</span><br><span class="line">void push(struct Node** head_ref, int new_data)</span><br><span class="line">&#123;</span><br><span class="line">    /* 1. 分配结点 */</span><br><span class="line">    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));</span><br><span class="line"> </span><br><span class="line">    /* 2. 指定数据  */</span><br><span class="line">    new_node-&gt;data  = new_data;</span><br><span class="line"> </span><br><span class="line">    /* 3. 新结点的后继作为头部 */</span><br><span class="line">    new_node-&gt;next = (*head_ref);</span><br><span class="line"> </span><br><span class="line">    /* 4. 头部指向新结点 */</span><br><span class="line">    (*head_ref)    = new_node;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 指定一个 prev_node, 在给定的结点后面插入一个新结点 */</span><br><span class="line">void insertAfter(struct Node* prev_node, int new_data)</span><br><span class="line">&#123;</span><br><span class="line">    /*1. 判断所给的结点是否为 NULL */</span><br><span class="line">    if (prev_node == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">      printf(&quot;the given previous node cannot be NULL&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /* 2. 分配结点 */</span><br><span class="line">    struct Node* new_node =(struct Node*) malloc(sizeof(struct Node));</span><br><span class="line"> </span><br><span class="line">    /* 3. 指定数据  */</span><br><span class="line">    new_node-&gt;data  = new_data;</span><br><span class="line"> </span><br><span class="line">    /* 4. 指定新结点的后继为 prev_node 的后继 */</span><br><span class="line">    new_node-&gt;next = prev_node-&gt;next;</span><br><span class="line"> </span><br><span class="line">    /* 5. 指定 prev_node 后继为新结点 */</span><br><span class="line">    prev_node-&gt;next = new_node;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 指向头结点的指针和一个整数, 在链表的尾部添加一个新结点  */</span><br><span class="line">void append(struct Node** head_ref, int new_data)</span><br><span class="line">&#123;</span><br><span class="line">    /* 1. 分配结点 */</span><br><span class="line">    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));</span><br><span class="line"> </span><br><span class="line">    struct Node *last = *head_ref;  /* used in step 5*/</span><br><span class="line"> </span><br><span class="line">    /* 2. 指定数据  */</span><br><span class="line">    new_node-&gt;data  = new_data;</span><br><span class="line"> </span><br><span class="line">    /* 3. 新结点会成为最后一个结点, 所以它的后继为 NULL*/</span><br><span class="line">    new_node-&gt;next = NULL;</span><br><span class="line"> </span><br><span class="line">    /* 4. 如果链表为空, 新结点就是头结点 */</span><br><span class="line">    if (*head_ref == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">       *head_ref = new_node;</span><br><span class="line">       return;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /* 5. 遍历到最后一个结点 */</span><br><span class="line">    while (last-&gt;next != NULL)</span><br><span class="line">        last = last-&gt;next;</span><br><span class="line"> </span><br><span class="line">    /* 6. 修改最后一个结点的后继为新结点 */</span><br><span class="line">    last-&gt;next = new_node;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 这个函数从头打印链表的内容</span><br><span class="line">void printList(struct Node *node)</span><br><span class="line">&#123;</span><br><span class="line">  while (node != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">     printf(&quot; %d &quot;, node-&gt;data);</span><br><span class="line">     node = node-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 测试函数*/</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  /* 空链表开始 */</span><br><span class="line">  struct Node* head = NULL;</span><br><span class="line"> </span><br><span class="line">  // 插入 6.  链表变成 6-&gt;NULL</span><br><span class="line">  append(&amp;head, 6);</span><br><span class="line"> </span><br><span class="line">  // 在首部插入 7 . 链表变成 7-&gt;6-&gt;NULL</span><br><span class="line">  push(&amp;head, 7);</span><br><span class="line"> </span><br><span class="line">  // 在首部插入 1. 链表变成 1-&gt;7-&gt;6-&gt;NULL</span><br><span class="line">  push(&amp;head, 1);</span><br><span class="line"> </span><br><span class="line">  // 在尾部插入4. 链表变成 1-&gt;7-&gt;6-&gt;4-&gt;NULL</span><br><span class="line">  append(&amp;head, 4);</span><br><span class="line"> </span><br><span class="line">  // 在 7 后面插入 8, 链表变成 1-&gt;7-&gt;8-&gt;6-&gt;4-&gt;NULL</span><br><span class="line">  insertAfter(head-&gt;next, 8);</span><br><span class="line"> </span><br><span class="line">  printf(&quot;\n Created Linked list is: &quot;);</span><br><span class="line">  printList(head);</span><br><span class="line"> </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输出:</span><br><span class="line"> Created Linked list is:  1  7  8  6  4</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -346,167 +349,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表 | 第1课（链表的介绍）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="跳跳魔王">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="跳跳魔王的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/链表 | 第1课（链表的介绍）/" itemprop="url">链表 |第 1 课（链表的介绍）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T13:06:20+08:00">
-                2018-03-09
-              </time>
+              <a href="/2018/03/09/链表 | 第1课（链表的介绍）/" rel="next" title="链表 |第 1 课（链表的介绍）">
+                <i class="fa fa-chevron-left"></i> 链表 |第 1 课（链表的介绍）
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。</p>
-<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png" alt=""></p>
-<h3 id="为什么会有链表"><a href="#为什么会有链表" class="headerlink" title="为什么会有链表?"></a>为什么会有链表?</h3><p>数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。</p>
-<ol>
-<li>数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。</li>
-<li>在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。</li>
-</ol>
-<p>例如, 如果有一个排序后的 ID 数组 id[].</p>
-<pre><code>id[] = [1000, 1010, 1050, 2000, 2040].
-</code></pre><p>如果我们要插入一个新的元素 ID 1005, 然后还要排序, 我们需要移动所有位于 1000 (除了 1000)之后的元素。</p>
-<p>对数组进行删除也很麻烦, 除非使用一些特殊技术。例如, 要删除 1010, 位于其后的所有元素都得移动。</p>
-<h3 id="相比数组的优点"><a href="#相比数组的优点" class="headerlink" title="相比数组的优点"></a>相比数组的优点</h3><ol>
-<li>动态大小</li>
-<li>容易插入/删除</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h3><ol>
-<li>不允许随机访问。我们必须从第一个结点开始顺序访问元素。所以我们不能对链表进行折半查找。</li>
-<li>链表的每个元素都要额外的内存空间。</li>
-</ol>
-<h3 id="C语言表示法"><a href="#C语言表示法" class="headerlink" title="C语言表示法:"></a>C语言表示法:</h3><p>链表通常用指向头结点的指针表示。如果链表是空的, 头结点就是 <strong>NULL</strong>.</p>
-<p>结点通常有两个部分组成:</p>
-<ol>
-<li>数据</li>
-<li>指向下一个结点的指针</li>
-</ol>
-<p>在 C 语言中, 我们可以用结构图表示一个结点。下面的例子是一个带有整数的结点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 链表的结点</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>下面，我们来创建一个含有 3 个结点的链表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">// 链表</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">struct Node </span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// 创建含有3个结点的链表</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  struct Node* head = NULL;</span><br><span class="line">  struct Node* second = NULL;</span><br><span class="line">  struct Node* third = NULL;</span><br><span class="line">   </span><br><span class="line">  // 在堆里分配3个结点  </span><br><span class="line">  head = (struct Node*)malloc(sizeof(struct Node)); </span><br><span class="line">  second = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  third = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line"> </span><br><span class="line">  /* 动态分配了3块内存。 </span><br><span class="line">     这3块内存分别是 first, second 喝 third     </span><br><span class="line">       head           second           third</span><br><span class="line">        |                |               |</span><br><span class="line">        |                |               |</span><br><span class="line">    +---+-----+     +----+----+     +----+----+</span><br><span class="line">    | #  | #  |     | #  | #  |     |  # |  # |</span><br><span class="line">    +---+-----+     +----+----+     +----+----+</span><br><span class="line">    </span><br><span class="line">   # 井号表示随机的值。</span><br><span class="line">   数据是随机的，因为我们还没有制定 */</span><br><span class="line">   </span><br><span class="line">  head-&gt;data = 1; //指定第一个结点的数据</span><br><span class="line">  head-&gt;next = second; // 把第一个结点和第二个结点连接起来</span><br><span class="line">   </span><br><span class="line">  /* 现在第一个结点有数据了，它的下一个结点是 second.</span><br><span class="line"> </span><br><span class="line">       head          second         third</span><br><span class="line">        |              |              |</span><br><span class="line">        |              |              |</span><br><span class="line">    +---+---+     +----+----+     +-----+----+</span><br><span class="line">    | 1  | o-----&gt;| #  | #  |     |  #  | #  |</span><br><span class="line">    +---+---+     +----+----+     +-----+----+    </span><br><span class="line">  */ </span><br><span class="line">   </span><br><span class="line">  second-&gt;data = 2; //指定第二个结点的数据</span><br><span class="line">  second-&gt;next = third; // 把第二个结点和第三个结点连接起来</span><br><span class="line">   </span><br><span class="line">  /* 现在第二个结点有数据了，他的下一个结点是 third.  </span><br><span class="line">   </span><br><span class="line">       head         second         third</span><br><span class="line">        |             |             |</span><br><span class="line">        |             |             |</span><br><span class="line">    +---+---+     +---+---+     +----+----+</span><br><span class="line">    | 1  | o-----&gt;| 2 | o-----&gt; |  # |  # |</span><br><span class="line">    +---+---+     +---+---+     +----+----+      */   </span><br><span class="line">   </span><br><span class="line">  third-&gt;data = 3; //指定第三个结点的数据</span><br><span class="line">  third-&gt;next = NULL;</span><br><span class="line">   </span><br><span class="line">  /* 现在第三个结点也有数据了, 他的后继指针为 NULL 表示链表结束在这里.</span><br><span class="line"> </span><br><span class="line">           head    </span><br><span class="line">             |</span><br><span class="line">             | </span><br><span class="line">        +---+---+     +---+---+       +----+------+</span><br><span class="line">        | 1  | o-----&gt;|  2  | o-----&gt; |  3 | NULL |</span><br><span class="line">        +---+---+     +---+---+       +----+------+       </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    注意只有头结点可以完整的表示整个链表. */     </span><br><span class="line"> </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h3><p>在上面的程序里, 我们创建了一个含有3个结点的链表。现在我们来遍历这个链表, 打印每个结点的数据。为了遍历方便, 我们写了一个函数 <strong>printList()</strong>来打印所给的链表。</p>
-<blockquote>
-<p><strong>我们强烈建议你在查看解决方案前，自己先练习一下。</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">// 遍历链表的 C 语言实现</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">struct Node </span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// 打印方法</span><br><span class="line">void printList(struct Node *n)</span><br><span class="line">&#123;</span><br><span class="line">  while (n != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">     printf(&quot; %d &quot;, n-&gt;data);</span><br><span class="line">     n = n-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  struct Node* head = NULL;</span><br><span class="line">  struct Node* second = NULL;</span><br><span class="line">  struct Node* third = NULL;</span><br><span class="line">   </span><br><span class="line">  // 在堆中分配3个结点  </span><br><span class="line">  head  = (struct Node*)malloc(sizeof(struct Node)); </span><br><span class="line">  second = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  third  = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  </span><br><span class="line">  head-&gt;data = 1; //指定第一个结点的数据</span><br><span class="line">  head-&gt;next = second; // 连接到第二个结点   </span><br><span class="line">  </span><br><span class="line">  second-&gt;data = 2; //指定第二个结点的数据</span><br><span class="line">  second-&gt;next = third;  </span><br><span class="line">  </span><br><span class="line">  third-&gt;data = 3; //指定第三个结点的数据</span><br><span class="line">  third-&gt;next = NULL;</span><br><span class="line">   </span><br><span class="line">  printList(head);</span><br><span class="line">  </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>Output:
- 1  2  3
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -516,144 +380,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表 | 第3课 (删除一个结点)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="跳跳魔王">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="跳跳魔王的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/链表 | 第3课 (删除一个结点)/" itemprop="url">链表 |第 3 课（删除一个结点）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T09:02:05+08:00">
-                2018-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在单链表章节我们已经讨论了 <a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8-%E7%AC%AC-1-%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%89/" target="_blank" rel="noopener">链表的介绍</a> 和 <a href="">链表的插入</a>。</p>
-<p>我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。<br>要从链表里删除一个结点, 我们需要以下步骤。</p>
-<ol>
-<li>找到待删结点的前驱结点。</li>
-<li>修改前驱结点的Next.</li>
-<li>释放被删除结点的内存。</li>
-</ol>
-<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png" alt=""></p>
-<blockquote>
-<p><strong><em>建议:</em></strong> 在查看解决方案前，请自己尝试练习。</p>
-</blockquote>
-<p>因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要释放被删除结点的内存。</p>
-<h3 id="下面是C-C-代码"><a href="#下面是C-C-代码" class="headerlink" title="下面是C/C++代码"></a>下面是C/C++代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">// 下面的代码已经通过编译</span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">// 结点定义</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">/* 引用链表的头结点和一个整数值, 在链表前面插入一个新的结点 */</span><br><span class="line">void push(struct Node** head_ref, int new_data)</span><br><span class="line">&#123;</span><br><span class="line">    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));</span><br><span class="line">    new_node-&gt;data  = new_data;</span><br><span class="line">    new_node-&gt;next = (*head_ref);</span><br><span class="line">    (*head_ref)    = new_node;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 引用链表的头结点和一个 key, 然后删除首次遇见的结点 */</span><br><span class="line">void deleteNode(struct Node **head_ref, int key)</span><br><span class="line">&#123;</span><br><span class="line">    // 保存头结点</span><br><span class="line">    struct Node* temp = *head_ref, *prev;</span><br><span class="line"> </span><br><span class="line">    // 如果要删除的结点恰巧是头结点</span><br><span class="line">    if (temp != NULL &amp;&amp; temp-&gt;data == key)</span><br><span class="line">    &#123;</span><br><span class="line">        *head_ref = temp-&gt;next;   // 修改头结点</span><br><span class="line">        free(temp);               // 释放头结点</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    // 查找要删除的 key, 因为我们要修改&apos;prev-&gt;next&apos;，所以需要跟踪前驱结点</span><br><span class="line">    while (temp != NULL &amp;&amp; temp-&gt;data != key)</span><br><span class="line">    &#123;</span><br><span class="line">        prev = temp;</span><br><span class="line">        temp = temp-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    // 如果链表里没有这个 key</span><br><span class="line">    if (temp == NULL) return;</span><br><span class="line"> </span><br><span class="line">    // 断开结点</span><br><span class="line">    prev-&gt;next = temp-&gt;next;</span><br><span class="line"> </span><br><span class="line">    free(temp);  // 释放内存</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 下面的函数打印链表的内容</span><br><span class="line">void printList(struct Node *node)</span><br><span class="line">&#123;</span><br><span class="line">    while (node != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot; %d &quot;, node-&gt;data);</span><br><span class="line">        node = node-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">/* 测试函数*/</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    /* 刚开始的空链表 */</span><br><span class="line">    struct Node* head = NULL;</span><br><span class="line"> </span><br><span class="line">    push(&amp;head, 7);</span><br><span class="line">    push(&amp;head, 1);</span><br><span class="line">    push(&amp;head, 3);</span><br><span class="line">    push(&amp;head, 2);</span><br><span class="line"> </span><br><span class="line">    puts(&quot;Created Linked List: &quot;);</span><br><span class="line">    printList(head);</span><br><span class="line">    deleteNode(&amp;head, 1);</span><br><span class="line">    puts(&quot;\nLinked List after Deletion of 1: &quot;);</span><br><span class="line">    printList(head);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Created Linked List:</span><br><span class="line"> 2  3  1  7</span><br><span class="line">Linked List after Deletion of 1:</span><br><span class="line"> 2  3  7</span><br></pre></td></tr></table></figure>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -661,6 +392,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -681,8 +416,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -731,6 +475,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在首部添加一个结点-4步"><span class="nav-number">1.</span> <span class="nav-text">在首部添加一个结点: (4步)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在指定的结点后面添加结点-5-个步骤"><span class="nav-number">2.</span> <span class="nav-text">在指定的结点后面添加结点: (5 个步骤)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在链表尾部添加结点-6-步"><span class="nav-number">3.</span> <span class="nav-text">在链表尾部添加结点: (6 步)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是一个完整的程序，使用上面所有的函数创建一个链表"><span class="nav-number">4.</span> <span class="nav-text">下面是一个完整的程序，使用上面所有的函数创建一个链表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -868,6 +628,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
