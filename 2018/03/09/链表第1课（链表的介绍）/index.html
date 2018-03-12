@@ -89,7 +89,7 @@
 <meta property="og:description" content="跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。  为什么会有链表?数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。  数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。 在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。  例如, 如果有一个排序">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png">
-<meta property="og:updated_time" content="2018-03-09T05:44:53.000Z">
+<meta property="og:updated_time" content="2018-03-12T03:13:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链表 |第 1 课（链表的介绍）">
 <meta name="twitter:description" content="跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。  为什么会有链表?数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。  数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。 在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。  例如, 如果有一个排序">
@@ -329,15 +329,139 @@
 <li>指向下一个结点的指针</li>
 </ol>
 <p>在 C 语言中, 我们可以用结构图表示一个结点。下面的例子是一个带有整数的结点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 链表的结点</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>下面，我们来创建一个含有 3 个结点的链表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">// 链表</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">struct Node </span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// 创建含有3个结点的链表</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  struct Node* head = NULL;</span><br><span class="line">  struct Node* second = NULL;</span><br><span class="line">  struct Node* third = NULL;</span><br><span class="line">   </span><br><span class="line">  // 在堆里分配3个结点  </span><br><span class="line">  head = (struct Node*)malloc(sizeof(struct Node)); </span><br><span class="line">  second = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  third = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line"> </span><br><span class="line">  /* 动态分配了3块内存。 </span><br><span class="line">     这3块内存分别是 first, second 喝 third     </span><br><span class="line">       head           second           third</span><br><span class="line">        |                |               |</span><br><span class="line">        |                |               |</span><br><span class="line">    +---+-----+     +----+----+     +----+----+</span><br><span class="line">    | #  | #  |     | #  | #  |     |  # |  # |</span><br><span class="line">    +---+-----+     +----+----+     +----+----+</span><br><span class="line">    </span><br><span class="line">   # 井号表示随机的值。</span><br><span class="line">   数据是随机的，因为我们还没有制定 */</span><br><span class="line">   </span><br><span class="line">  head-&gt;data = 1; //指定第一个结点的数据</span><br><span class="line">  head-&gt;next = second; // 把第一个结点和第二个结点连接起来</span><br><span class="line">   </span><br><span class="line">  /* 现在第一个结点有数据了，它的下一个结点是 second.</span><br><span class="line"> </span><br><span class="line">       head          second         third</span><br><span class="line">        |              |              |</span><br><span class="line">        |              |              |</span><br><span class="line">    +---+---+     +----+----+     +-----+----+</span><br><span class="line">    | 1  | o-----&gt;| #  | #  |     |  #  | #  |</span><br><span class="line">    +---+---+     +----+----+     +-----+----+    </span><br><span class="line">  */ </span><br><span class="line">   </span><br><span class="line">  second-&gt;data = 2; //指定第二个结点的数据</span><br><span class="line">  second-&gt;next = third; // 把第二个结点和第三个结点连接起来</span><br><span class="line">   </span><br><span class="line">  /* 现在第二个结点有数据了，他的下一个结点是 third.  </span><br><span class="line">   </span><br><span class="line">       head         second         third</span><br><span class="line">        |             |             |</span><br><span class="line">        |             |             |</span><br><span class="line">    +---+---+     +---+---+     +----+----+</span><br><span class="line">    | 1  | o-----&gt;| 2 | o-----&gt; |  # |  # |</span><br><span class="line">    +---+---+     +---+---+     +----+----+      */   </span><br><span class="line">   </span><br><span class="line">  third-&gt;data = 3; //指定第三个结点的数据</span><br><span class="line">  third-&gt;next = NULL;</span><br><span class="line">   </span><br><span class="line">  /* 现在第三个结点也有数据了, 他的后继指针为 NULL 表示链表结束在这里.</span><br><span class="line"> </span><br><span class="line">           head    </span><br><span class="line">             |</span><br><span class="line">             | </span><br><span class="line">        +---+---+     +---+---+       +----+------+</span><br><span class="line">        | 1  | o-----&gt;|  2  | o-----&gt; |  3 | NULL |</span><br><span class="line">        +---+---+     +---+---+       +----+------+       </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    注意只有头结点可以完整的表示整个链表. */     </span><br><span class="line"> </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h3><p>在上面的程序里, 我们创建了一个含有3个结点的链表。现在我们来遍历这个链表, 打印每个结点的数据。为了遍历方便, 我们写了一个函数 <strong>printList()</strong>来打印所给的链表。</p>
+<pre><code>// 链表的结点
+struct Node
+{
+  int data;
+  struct Node *next;
+};
+</code></pre><p>下面，我们来创建一个含有 3 个结点的链表。</p>
+<pre><code>// 链表
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+struct Node 
+{
+  int data;
+  struct Node *next;
+};
+
+// 创建含有3个结点的链表
+int main()
+{
+  struct Node* head = NULL;
+  struct Node* second = NULL;
+  struct Node* third = NULL;
+
+  // 在堆里分配3个结点  
+  head = (struct Node*)malloc(sizeof(struct Node)); 
+  second = (struct Node*)malloc(sizeof(struct Node));
+  third = (struct Node*)malloc(sizeof(struct Node));
+
+  /* 动态分配了3块内存。 
+     这3块内存分别是 first, second 喝 third     
+       head           second           third
+        |                |               |
+        |                |               |
+    +---+-----+     +----+----+     +----+----+
+    | #  | #  |     | #  | #  |     |  # |  # |
+    +---+-----+     +----+----+     +----+----+
+
+   # 井号表示随机的值。
+   数据是随机的，因为我们还没有制定 */
+
+  head-&gt;data = 1; //指定第一个结点的数据
+  head-&gt;next = second; // 把第一个结点和第二个结点连接起来
+
+  /* 现在第一个结点有数据了，它的下一个结点是 second.
+
+       head          second         third
+        |              |              |
+        |              |              |
+    +---+---+     +----+----+     +-----+----+
+    | 1  | o-----&gt;| #  | #  |     |  #  | #  |
+    +---+---+     +----+----+     +-----+----+    
+  */ 
+
+  second-&gt;data = 2; //指定第二个结点的数据
+  second-&gt;next = third; // 把第二个结点和第三个结点连接起来
+
+  /* 现在第二个结点有数据了，他的下一个结点是 third.  
+
+       head         second         third
+        |             |             |
+        |             |             |
+    +---+---+     +---+---+     +----+----+
+    | 1  | o-----&gt;| 2 | o-----&gt; |  # |  # |
+    +---+---+     +---+---+     +----+----+      */   
+
+  third-&gt;data = 3; //指定第三个结点的数据
+  third-&gt;next = NULL;
+
+  /* 现在第三个结点也有数据了, 他的后继指针为 NULL 表示链表结束在这里.
+
+           head    
+             |
+             | 
+        +---+---+     +---+---+       +----+------+
+        | 1  | o-----&gt;|  2  | o-----&gt; |  3 | NULL |
+        +---+---+     +---+---+       +----+------+       
+
+
+    注意只有头结点可以完整的表示整个链表. */     
+
+  return 0;
+}
+</code></pre><h3 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h3><p>在上面的程序里, 我们创建了一个含有3个结点的链表。现在我们来遍历这个链表, 打印每个结点的数据。为了遍历方便, 我们写了一个函数 <strong>printList()</strong>来打印所给的链表。</p>
 <blockquote>
 <p><strong>我们强烈建议你在查看解决方案前，自己先练习一下。</strong></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">// 遍历链表的 C 语言实现</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">struct Node </span><br><span class="line">&#123;</span><br><span class="line">  int data;</span><br><span class="line">  struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// 打印方法</span><br><span class="line">void printList(struct Node *n)</span><br><span class="line">&#123;</span><br><span class="line">  while (n != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">     printf(&quot; %d &quot;, n-&gt;data);</span><br><span class="line">     n = n-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  struct Node* head = NULL;</span><br><span class="line">  struct Node* second = NULL;</span><br><span class="line">  struct Node* third = NULL;</span><br><span class="line">   </span><br><span class="line">  // 在堆中分配3个结点  </span><br><span class="line">  head  = (struct Node*)malloc(sizeof(struct Node)); </span><br><span class="line">  second = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  third  = (struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">  </span><br><span class="line">  head-&gt;data = 1; //指定第一个结点的数据</span><br><span class="line">  head-&gt;next = second; // 连接到第二个结点   </span><br><span class="line">  </span><br><span class="line">  second-&gt;data = 2; //指定第二个结点的数据</span><br><span class="line">  second-&gt;next = third;  </span><br><span class="line">  </span><br><span class="line">  third-&gt;data = 3; //指定第三个结点的数据</span><br><span class="line">  third-&gt;next = NULL;</span><br><span class="line">   </span><br><span class="line">  printList(head);</span><br><span class="line">  </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>Output:
+<pre><code>// 遍历链表的 C 语言实现
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+struct Node 
+{
+  int data;
+  struct Node *next;
+};
+
+// 打印方法
+void printList(struct Node *n)
+{
+  while (n != NULL)
+  {
+     printf(&quot; %d &quot;, n-&gt;data);
+     n = n-&gt;next;
+  }
+}
+
+int main()
+{
+  struct Node* head = NULL;
+  struct Node* second = NULL;
+  struct Node* third = NULL;
+
+  // 在堆中分配3个结点  
+  head  = (struct Node*)malloc(sizeof(struct Node)); 
+  second = (struct Node*)malloc(sizeof(struct Node));
+  third  = (struct Node*)malloc(sizeof(struct Node));
+
+  head-&gt;data = 1; //指定第一个结点的数据
+  head-&gt;next = second; // 连接到第二个结点   
+
+  second-&gt;data = 2; //指定第二个结点的数据
+  second-&gt;next = third;  
+
+  third-&gt;data = 3; //指定第三个结点的数据
+  third-&gt;next = NULL;
+
+  printList(head);
+
+  return 0;
+}
+
+Output:
  1  2  3
 </code></pre>
       
