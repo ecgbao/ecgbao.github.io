@@ -231,6 +231,928 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第9课翻转链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="跳跳魔王">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跳跳魔王的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/链表第9课翻转链表/" itemprop="url">链表 | 第9课（翻转链表）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T13:27:09+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>给定一个链表的头结点指针, 目标是翻转这个链表。</p>
+<p>例子:</p>
+<pre><code>Input : Head of following linked list  
+       1-&gt;2-&gt;3-&gt;4-&gt;NULL
+Output : Linked list should be changed to,
+       4-&gt;3-&gt;2-&gt;1-&gt;NULL
+
+Input : Head of following linked list  
+       1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+Output : Linked list should be changed to,
+       5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+
+Input : NULL
+Output : NULL
+
+Input  : 1-&gt;NULL
+Output : 1-&gt;NULL
+</code></pre><h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><pre><code>利用3个指针，prev 为 NULL, curr 等于头结点，next 为 NULL.
+遍历整个链表。在循环体内, 这样做。
+// Before changing next of current,
+// next node
+next = curr-&gt;next
+
+// This is where actual reversing happens
+curr-&gt;next = prev
+
+// Move prev and curr one step forward
+prev = curr
+curr = next
+</code></pre><h4 id="循环第一步结束-i-e-在-next-curr-gt-next-之后"><a href="#循环第一步结束-i-e-在-next-curr-gt-next-之后" class="headerlink" title="循环第一步结束, i.e., 在 next = curr-&gt;next 之后"></a>循环第一步结束, i.e., 在 next = curr-&gt;next 之后</h4><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative1-2.png" alt=""></p>
+<h4 id="循环一次之后"><a href="#循环一次之后" class="headerlink" title="循环一次之后"></a>循环一次之后</h4><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative2.png" alt=""></p>
+<pre><code>// Iterative C program to reverse a linked list
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/* Function to reverse the linked list */
+static void reverse(struct Node** head_ref)
+{
+    struct Node* prev   = NULL;
+    struct Node* current = *head_ref;
+    struct Node* next = NULL;
+    while (current != NULL)
+    {
+        next  = current-&gt;next;  
+        current-&gt;next = prev;   
+        prev = current;
+        current = next;
+    }
+    *head_ref = prev;
+}
+
+/* Function to push a node */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+            (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);    
+
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
+}
+
+/* Function to print linked list */
+void printList(struct Node *head)
+{
+    struct Node *temp = head;
+    while(temp != NULL)
+    {
+        printf(&quot;%d  &quot;, temp-&gt;data);    
+        temp = temp-&gt;next;  
+    }
+}    
+
+/* Driver program to test above function*/
+int main()
+{
+    /* Start with the empty list */
+    struct Node* head = NULL;
+
+     push(&amp;head, 20);
+     push(&amp;head, 4);
+     push(&amp;head, 15); 
+     push(&amp;head, 85);      
+
+     printf(&quot;Given linked list\n&quot;);
+     printList(head);    
+     reverse(&amp;head);                      
+     printf(&quot;\nReversed Linked list \n&quot;);
+     printList(head);    
+     getchar();
+}
+</code></pre><p>###<br>    所给链表<br>    85 15 4 20<br>    翻转后的链表<br>    20 4 15 85 </p>
+<h5 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h5><h5 id="空间复杂度-O-1"><a href="#空间复杂度-O-1" class="headerlink" title="空间复杂度: O(1)"></a>空间复杂度: O(1)</h5><h4 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法:"></a>递归方法:</h4><pre><code>1) 把链表划分为2部分 - 第一个结点和剩下的结点
+2) 对剩下的链表调用翻转方法.
+3) 把剩下的链表链接到第一个结点.
+4) 固定头指针
+</code></pre><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/2009/07/Linked-List-Rverse.gif" alt=""></p>
+<pre><code>void recursiveReverse(struct Node** head_ref)
+{
+    struct Node* first;
+    struct Node* rest;
+
+    /* empty list */
+    if (*head_ref == NULL)
+       return;   
+
+    /* suppose first = {1, 2, 3}, rest = {2, 3} */
+    first = *head_ref;  
+    rest  = first-&gt;next;
+
+    /* List has only one node */
+    if (rest == NULL)
+       return;   
+
+    /* reverse the rest list and put the first element at the end */
+    recursiveReverse(&amp;rest);
+    first-&gt;next-&gt;next  = first;  
+
+    /* tricky step -- see the diagram */
+    first-&gt;next  = NULL;          
+
+    /* fix the head pointer */
+    *head_ref = rest;              
+}
+</code></pre><h5 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h5><h5 id="空间复杂度-O-1-1"><a href="#空间复杂度-O-1-1" class="headerlink" title="空间复杂度: O(1)"></a>空间复杂度: O(1)</h5><h4 id="一个更简单的方法"><a href="#一个更简单的方法" class="headerlink" title="一个更简单的方法"></a>一个更简单的方法</h4><p>下面的方法用 C++ 实现。</p>
+<pre><code>// A simple and tail recursive C++ program to reverse
+// a linked list
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+void reverseUtil(Node *curr, Node *prev, Node **head);
+
+// This function mainly calls reverseUtil()
+// with prev as NULL
+void reverse(Node **head)
+{
+    if (!head)
+        return;
+    reverseUtil(*head, NULL, head);
+}
+
+// A simple and tail recursive function to reverse
+// a linked list.  prev is passed as NULL initially.
+void reverseUtil(Node *curr, Node *prev, Node **head)
+{
+    /* If last node mark it head*/
+    if (!curr-&gt;next)
+    {
+        *head = curr;
+
+        /* Update next to prev node */
+        curr-&gt;next = prev;
+        return;
+    }
+
+    /* Save curr-&gt;next node for recursive call */
+    node *next = curr-&gt;next;
+
+    /* and update next ..*/
+    curr-&gt;next = prev;
+
+    reverseUtil(next, curr, head);
+}
+
+// A utility function to create a new node
+Node *newNode(int key)
+{
+    Node *temp = new Node;
+    temp-&gt;data = key;
+    temp-&gt;next = NULL;
+    return temp;
+}
+
+// A utility function to print a linked list
+void printlist(Node *head)
+{
+    while(head != NULL)
+    {
+        cout &lt;&lt; head-&gt;data &lt;&lt; &quot; &quot;;
+        head = head-&gt;next;
+    }
+    cout &lt;&lt; endl;
+}
+
+// Driver program to test above functions
+int main()
+{
+    Node *head1 = newNode(1);
+    head1-&gt;next = newNode(2);
+    head1-&gt;next-&gt;next = newNode(3);
+    head1-&gt;next-&gt;next-&gt;next = newNode(4);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next = newNode(5);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(6);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(7);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(8);
+    cout &lt;&lt; &quot;Given linked list\n&quot;;
+    printlist(head1);
+    reverse(&amp;head1);
+    cout &lt;&lt; &quot;\nReversed linked list\n&quot;;
+    printlist(head1);
+    return 0;
+}
+</code></pre><p>###</p>
+<pre><code>Output:
+Given linked list
+1 2 3 4 5 6 7 8
+
+Reversed linked list
+8 7 6 5 4 3 2 1
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第8课输出链表的中间结点值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="跳跳魔王">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跳跳魔王的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/链表第8课输出链表的中间结点值/" itemprop="url">链表 | 第8课（输出链表的中间结点值）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T13:07:07+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>给定一个单链表, 查找中间结点。比如, 如果所给的链表是<strong>1-&gt;2-&gt;3-&gt;4-&gt;5</strong>就输出<strong>3</strong>.</p>
+<p>如果有偶数个结点, 那就有两个中间的结点, 我们需要打印第二个结点元素。例如, 如果所给的链表是<strong>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6</strong>那么就输出<strong>4</strong> </p>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法 1:"></a>方法 1:</h4><p>遍历整个链表并计算结点的个数。然后遍历结点到 <strong><em>count/2</em></strong> 然后返回此处的结点。</p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法 2:"></a>方法 2:</h4><p>使用两个指针遍历链表。第一个指针每次移动一个位置，第二个指针每次移动两个位置。当最快的指针到达最后的时候，最慢的指针正好到达链表的中间位置。</p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/* Function to get the middle of the linked list*/
+void printMiddle(struct Node *head)
+{
+    struct Node *slow_ptr = head;
+    struct Node *fast_ptr = head;
+
+    if (head!=NULL)
+    {
+        while (fast_ptr != NULL &amp;&amp; fast_ptr-&gt;next != NULL)
+        {
+            fast_ptr = fast_ptr-&gt;next-&gt;next;
+            slow_ptr = slow_ptr-&gt;next;
+        }
+        printf(&quot;The middle element is [%d]\n\n&quot;, slow_ptr-&gt;data);
+    }
+}
+
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+        (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
+}
+
+// A utility function to print a given linked list
+void printList(struct Node *ptr)
+{
+    while (ptr != NULL)
+    {
+        printf(&quot;%d-&gt;&quot;, ptr-&gt;data);
+        ptr = ptr-&gt;next;
+    }
+    printf(&quot;NULL\n&quot;);
+}
+
+/* Drier program to test above function*/
+int main()
+{
+    /* Start with the empty list */
+    struct Node* head = NULL;
+    int i;
+
+    for (i=5; i&gt;0; i--)
+    {
+        push(&amp;head, i);
+        printList(head);
+        printMiddle(head);
+    }
+
+    return 0;
+}
+</code></pre><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><pre><code>Output:
+5-&gt;NULL
+The middle element is [5]
+
+4-&gt;5-&gt;NULL
+The middle element is [5]
+
+3-&gt;4-&gt;5-&gt;NULL
+The middle element is [4]
+
+2-&gt;3-&gt;4-&gt;5-&gt;NULL
+The middle element is [4]
+
+1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+The middle element is [3]
+</code></pre><h4 id="方法-3"><a href="#方法-3" class="headerlink" title="方法 3:"></a>方法 3:</h4><p>初始化一个中间元素等于头结点，然后初始化一个计数器为 0. 从头遍历链表, 遍历的时候增加计数器，当计时器是奇数时，修改<strong>mid</strong>为<strong>mid-&gt;next</strong>。</p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+/* Link list node */
+struct node
+{
+    int data;
+    struct node* next;
+};
+
+/* Function to get the middle of the linked list*/
+void printMiddle(struct node *head)
+{
+    int count = 0;
+    struct node *mid = head;
+
+    while (head != NULL)
+    {
+        /* update mid, when &apos;count&apos; is odd number */
+        if (count &amp; 1)
+            mid = mid-&gt;next;
+
+        ++count;
+        head = head-&gt;next;
+    }
+
+    /* if empty list is provided */
+    if (mid != NULL)
+        printf(&quot;The middle element is [%d]\n\n&quot;, mid-&gt;data);
+}
+
+
+void push(struct node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct node* new_node =
+        (struct node*) malloc(sizeof(struct node));
+
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
+}
+
+// A utility function to print a given linked list
+void printList(struct node *ptr)
+{
+    while (ptr != NULL)
+    {
+        printf(&quot;%d-&gt;&quot;, ptr-&gt;data);
+        ptr = ptr-&gt;next;
+    }
+    printf(&quot;NULL\n&quot;);
+}
+
+/* Drier program to test above function*/
+int main()
+{
+    /* Start with the empty list */
+    struct node* head = NULL;
+    int i;
+
+    for (i=5; i&gt;0; i--)
+    {
+        push(&amp;head, i);
+        printList(head);
+        printMiddle(head);
+    }
+
+    return 0;
+}
+</code></pre><h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><pre><code>Output:
+
+5-&gt;NULL
+The middle element is [5]
+
+4-&gt;5-&gt;NULL
+The middle element is [5]
+
+3-&gt;4-&gt;5-&gt;NULL
+The middle element is [4]
+
+2-&gt;3-&gt;4-&gt;5-&gt;NULL
+The middle element is [4]
+
+1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+The middle element is [3]
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="跳跳魔王">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跳跳魔王的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/链表第7课获取第N个结点/" itemprop="url">链表 | 第7课（获取第N个结点）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T12:58:23+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>编写一个函数 <strong>GetNth()</strong>，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。</p>
+<p>例如:</p>
+<pre><code>Input:  1-&gt;10-&gt;30-&gt;14,  index = 2
+Output: 30  
+The node at index 2 is 30
+</code></pre><h4 id="算法"><a href="#算法" class="headerlink" title="算法:"></a>算法:</h4><pre><code>1. 初始化 count = 0
+2. 循环链表
+     a. 如果 count 等于输入的索引，就返回当前结点
+         node
+     b. 递增 count
+     c. 当前指针后移
+</code></pre><h4 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;assert.h&gt;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/* Given a reference (pointer to pointer) to the head
+    of a list and an int, push a new node on the front
+    of the list. */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+            (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
+}
+
+/* Takes head pointer of the linked list and index
+    as arguments and return data at index*/
+int GetNth(struct Node* head, int index)
+{
+    struct Node* current = head;
+    int count = 0; /* the index of the node we&apos;re currently
+                  looking at */
+    while (current != NULL)
+    {
+       if (count == index)
+          return(current-&gt;data);
+       count++;
+       current = current-&gt;next;
+    }
+
+    /* if we get to this line, the caller was asking
+       for a non-existent element so we assert fail */
+    assert(0);              
+}
+
+/* Drier program to test above function*/
+int main()
+{
+    /* Start with the empty list */
+    struct Node* head = NULL;
+
+    /* Use push() to construct below list
+     1-&gt;12-&gt;1-&gt;4-&gt;1  */
+    push(&amp;head, 1);
+    push(&amp;head, 4);
+    push(&amp;head, 1);
+    push(&amp;head, 12);
+    push(&amp;head, 1);  
+
+    /* Check the count function */
+    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
+    getchar();
+}
+
+Output:
+Element at index 3 is 4
+</code></pre><h4 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4><h4 id="方法-2-使用递归"><a href="#方法-2-使用递归" class="headerlink" title="方法 2- 使用递归"></a>方法 2- 使用递归</h4><h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法:"></a>算法:</h4><pre><code>getnth(node,n)
+1. 初始化 count = 1
+2. if count == n
+     return node-&gt;data
+3. else
+    return getnth(node-&gt;next,n-1)
+</code></pre><h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list 
+// using recursion
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/*  Given a reference (pointer to pointer) to 
+    the head of a list and an int, push a 
+    new node on the front of the list. */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+            (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data */
+    new_node-&gt;data = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref) = new_node;
+}
+
+/* Takes head pointer of the linked list and index
+    as arguments and return data at index*/
+int GetNth(struct Node *head,int n)
+{
+    int count = 1;
+
+    //if count equal too n return node-&gt;data
+    if(count == n)
+    return head-&gt;data;
+
+    //recursively decrease n and increase 
+    // head to next pointer 
+    return GetNth(head-&gt;next, n-1); 
+}
+
+/* Drier program to test above function*/
+int main()
+{
+     /* Start with the empty list */
+    struct Node* head = NULL;
+
+    /* Use push() to construct below list
+     1-&gt;12-&gt;1-&gt;4-&gt;1  */
+    push(&amp;head, 1);
+    push(&amp;head, 4);
+    push(&amp;head, 1);
+    push(&amp;head, 12);
+    push(&amp;head, 1);  
+
+    /* Check the count function */
+    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
+    getchar();
+}
+
+Output:
+Element at index 3 is 1
+</code></pre><h4 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表第6课（交换结点而不交换数据）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1961,7 +2883,7 @@ Linked List after Deletion of 1:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -81,19 +81,21 @@
 
 
 
-<meta name="description" content="要求写一个 C 函数计算指定单链表的结点数。  例如, 链表1-&amp;gt;3-&amp;gt;1-&amp;gt;2-&amp;gt;1通过这个函数可以获取到 5 个结点。 迭代方案 初始化计数为 0  初始化一个结点指针, current = head. 如果 current 不为 NULL 继续循环   12a) current = current -&amp;gt; nextb) count++;    返回计数   下面是">
+<meta name="description" content="给定一个链表的头结点指针, 目标是翻转这个链表。 例子: Input : Head of following linked list          1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;NULL Output : Linked list should be changed to,        4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Input : Head of">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表 | 第4课（链表的长度）">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/链表第4课（链表的长度）/index.html">
+<meta property="og:title" content="链表 | 第9课（翻转链表）">
+<meta property="og:url" content="http://yoursite.com/2018/03/12/链表第9课翻转链表/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
-<meta property="og:description" content="要求写一个 C 函数计算指定单链表的结点数。  例如, 链表1-&amp;gt;3-&amp;gt;1-&amp;gt;2-&amp;gt;1通过这个函数可以获取到 5 个结点。 迭代方案 初始化计数为 0  初始化一个结点指针, current = head. 如果 current 不为 NULL 继续循环   12a) current = current -&amp;gt; nextb) count++;    返回计数   下面是">
+<meta property="og:description" content="给定一个链表的头结点指针, 目标是翻转这个链表。 例子: Input : Head of following linked list          1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;NULL Output : Linked list should be changed to,        4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Input : Head of">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2015/03/Linkedlist_find_length.png">
-<meta property="og:updated_time" content="2018-03-12T03:11:29.000Z">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative1-2.png">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative2.png">
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/2009/07/Linked-List-Rverse.gif">
+<meta property="og:updated_time" content="2018-03-12T05:42:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表 | 第4课（链表的长度）">
-<meta name="twitter:description" content="要求写一个 C 函数计算指定单链表的结点数。  例如, 链表1-&amp;gt;3-&amp;gt;1-&amp;gt;2-&amp;gt;1通过这个函数可以获取到 5 个结点。 迭代方案 初始化计数为 0  初始化一个结点指针, current = head. 如果 current 不为 NULL 继续循环   12a) current = current -&amp;gt; nextb) count++;    返回计数   下面是">
-<meta name="twitter:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2015/03/Linkedlist_find_length.png">
+<meta name="twitter:title" content="链表 | 第9课（翻转链表）">
+<meta name="twitter:description" content="给定一个链表的头结点指针, 目标是翻转这个链表。 例子: Input : Head of following linked list          1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;NULL Output : Linked list should be changed to,        4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL  Input : Head of">
+<meta name="twitter:image" content="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative1-2.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/链表第4课（链表的长度）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/12/链表第9课翻转链表/"/>
 
 
 
 
 
-  <title>链表 | 第4课（链表的长度） | 跳跳魔王的技术博客</title>
+  <title>链表 | 第9课（翻转链表） | 跳跳魔王的技术博客</title>
   
 
 
@@ -236,7 +238,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表第4课（链表的长度）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第9课翻转链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="跳跳魔王">
@@ -253,7 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表 | 第4课（链表的长度）</h1>
+          <h1 class="post-title" itemprop="name headline">链表 | 第9课（翻转链表）</h1>
         
 
         <div class="post-meta">
@@ -265,8 +267,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T15:06:33+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T13:27:09+08:00">
+                2018-03-12
               </time>
             
 
@@ -303,21 +305,39 @@
       
 
       
-        <p>要求写一个 C 函数计算指定单链表的结点数。</p>
-<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2015/03/Linkedlist_find_length.png" alt=""></p>
-<p>例如, 链表<strong>1-&gt;3-&gt;1-&gt;2-&gt;1</strong>通过这个函数可以获取到 5 个结点。</p>
-<h3 id="迭代方案"><a href="#迭代方案" class="headerlink" title="迭代方案"></a>迭代方案</h3><ol>
-<li>初始化计数为 0 </li>
-<li>初始化一个结点指针, <strong>current = head</strong>.</li>
-<li><p>如果 current 不为 NULL 继续循环</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a) current = current -&gt; next</span><br><span class="line">b) count++;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li>返回计数 </li>
-</ol>
-<p>下面是 C/C++ 实现的计数算法。</p>
-<pre><code>#include&lt;stdio.h&gt;
+        <p>给定一个链表的头结点指针, 目标是翻转这个链表。</p>
+<p>例子:</p>
+<pre><code>Input : Head of following linked list  
+       1-&gt;2-&gt;3-&gt;4-&gt;NULL
+Output : Linked list should be changed to,
+       4-&gt;3-&gt;2-&gt;1-&gt;NULL
+
+Input : Head of following linked list  
+       1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+Output : Linked list should be changed to,
+       5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+
+Input : NULL
+Output : NULL
+
+Input  : 1-&gt;NULL
+Output : 1-&gt;NULL
+</code></pre><h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><pre><code>利用3个指针，prev 为 NULL, curr 等于头结点，next 为 NULL.
+遍历整个链表。在循环体内, 这样做。
+// Before changing next of current,
+// next node
+next = curr-&gt;next
+
+// This is where actual reversing happens
+curr-&gt;next = prev
+
+// Move prev and curr one step forward
+prev = curr
+curr = next
+</code></pre><h4 id="循环第一步结束-i-e-在-next-curr-gt-next-之后"><a href="#循环第一步结束-i-e-在-next-curr-gt-next-之后" class="headerlink" title="循环第一步结束, i.e., 在 next = curr-&gt;next 之后"></a>循环第一步结束, i.e., 在 next = curr-&gt;next 之后</h4><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative1-2.png" alt=""></p>
+<h4 id="循环一次之后"><a href="#循环一次之后" class="headerlink" title="循环一次之后"></a>循环一次之后</h4><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/reverse-list-iterative2.png" alt=""></p>
+<pre><code>// Iterative C program to reverse a linked list
+#include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt;
 
 /* Link list node */
@@ -327,7 +347,23 @@ struct Node
     struct Node* next;
 };
 
-/* 指向头结点的指针和一个整数, 在链表的头部添加一个新结点. */
+/* Function to reverse the linked list */
+static void reverse(struct Node** head_ref)
+{
+    struct Node* prev   = NULL;
+    struct Node* current = *head_ref;
+    struct Node* next = NULL;
+    while (current != NULL)
+    {
+        next  = current-&gt;next;  
+        current-&gt;next = prev;   
+        prev = current;
+        current = next;
+    }
+    *head_ref = prev;
+}
+
+/* Function to push a node */
 void push(struct Node** head_ref, int new_data)
 {
     /* allocate node */
@@ -338,109 +374,165 @@ void push(struct Node** head_ref, int new_data)
     new_node-&gt;data  = new_data;
 
     /* link the old list off the new node */
-    new_node-&gt;next = (*head_ref);
+    new_node-&gt;next = (*head_ref);    
 
     /* move the head to point to the new node */
     (*head_ref)    = new_node;
 }
 
-/* 获取链表的结点数 */
-int getCount(struct Node* head)
+/* Function to print linked list */
+void printList(struct Node *head)
 {
-    int count = 0;  // 初始值
-    struct Node* current = head;  // 当前结点
-    while (current != NULL)
+    struct Node *temp = head;
+    while(temp != NULL)
     {
-        count++;
-        current = current-&gt;next;
+        printf(&quot;%d  &quot;, temp-&gt;data);    
+        temp = temp-&gt;next;  
     }
-    return count;
-}
+}    
 
-/* 测试函数*/
+/* Driver program to test above function*/
 int main()
 {
-    /* 开始空链表 */
+    /* Start with the empty list */
     struct Node* head = NULL;
 
-    /* 使用 push() 构造链表
-     1-&gt;2-&gt;1-&gt;3-&gt;1  */
-    push(&amp;head, 1);
-    push(&amp;head, 3);
-    push(&amp;head, 1);
-    push(&amp;head, 2);
-    push(&amp;head, 1);
+     push(&amp;head, 20);
+     push(&amp;head, 4);
+     push(&amp;head, 15); 
+     push(&amp;head, 85);      
 
-    /* 计数函数 */
-    printf(&quot;count of nodes is %d&quot;, getCount(head));
-    return 0;
+     printf(&quot;Given linked list\n&quot;);
+     printList(head);    
+     reverse(&amp;head);                      
+     printf(&quot;\nReversed Linked list \n&quot;);
+     printList(head);    
+     getchar();
 }
+</code></pre><p>###<br>    所给链表<br>    85 15 4 20<br>    翻转后的链表<br>    20 4 15 85 </p>
+<h5 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h5><h5 id="空间复杂度-O-1"><a href="#空间复杂度-O-1" class="headerlink" title="空间复杂度: O(1)"></a>空间复杂度: O(1)</h5><h4 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法:"></a>递归方法:</h4><pre><code>1) 把链表划分为2部分 - 第一个结点和剩下的结点
+2) 对剩下的链表调用翻转方法.
+3) 把剩下的链表链接到第一个结点.
+4) 固定头指针
+</code></pre><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/2009/07/Linked-List-Rverse.gif" alt=""></p>
+<pre><code>void recursiveReverse(struct Node** head_ref)
+{
+    struct Node* first;
+    struct Node* rest;
 
-输出:
-count of nodes is 5
-</code></pre><h3 id="递归方案"><a href="#递归方案" class="headerlink" title="递归方案"></a>递归方案</h3><h5 id="int-getCount-head"><a href="#int-getCount-head" class="headerlink" title="int getCount(head)"></a>int getCount(head)</h5><ol>
-<li>如果头结点为 NULL, 返回 0.</li>
-<li>否则返回 <code>return 1 + getCount(head-&gt;next)</code></li>
-</ol>
-<p>下面是 C/C++ 实现的递归算法。</p>
-<pre><code>#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
+    /* empty list */
+    if (*head_ref == NULL)
+       return;   
 
-/* 链表结点 */
+    /* suppose first = {1, 2, 3}, rest = {2, 3} */
+    first = *head_ref;  
+    rest  = first-&gt;next;
+
+    /* List has only one node */
+    if (rest == NULL)
+       return;   
+
+    /* reverse the rest list and put the first element at the end */
+    recursiveReverse(&amp;rest);
+    first-&gt;next-&gt;next  = first;  
+
+    /* tricky step -- see the diagram */
+    first-&gt;next  = NULL;          
+
+    /* fix the head pointer */
+    *head_ref = rest;              
+}
+</code></pre><h5 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h5><h5 id="空间复杂度-O-1-1"><a href="#空间复杂度-O-1-1" class="headerlink" title="空间复杂度: O(1)"></a>空间复杂度: O(1)</h5><h4 id="一个更简单的方法"><a href="#一个更简单的方法" class="headerlink" title="一个更简单的方法"></a>一个更简单的方法</h4><p>下面的方法用 C++ 实现。</p>
+<pre><code>// A simple and tail recursive C++ program to reverse
+// a linked list
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
 struct Node
 {
     int data;
-    struct Node* next;
+    struct Node *next;
 };
 
-/* 指向头结点的指针和一个整数, 在链表的头部添加一个新结点 */
-void push(struct Node** head_ref, int new_data)
+void reverseUtil(Node *curr, Node *prev, Node **head);
+
+// This function mainly calls reverseUtil()
+// with prev as NULL
+void reverse(Node **head)
 {
-    /* 分配结点 */
-    struct Node* new_node =
-            (struct Node*) malloc(sizeof(struct Node));
-
-    /* 指定数据  */
-    new_node-&gt;data  = new_data;
-
-    /* 指定新结点的后继为旧的头结点 */
-    new_node-&gt;next = (*head_ref);
-
-    /* 新结点成为头结点 */
-    (*head_ref)    = new_node;
+    if (!head)
+        return;
+    reverseUtil(*head, NULL, head);
 }
 
-/* 计数函数*/
-int getCount(struct Node* head)
+// A simple and tail recursive function to reverse
+// a linked list.  prev is passed as NULL initially.
+void reverseUtil(Node *curr, Node *prev, Node **head)
 {
-    // 递归结束条件
-    if (head == NULL)
-        return 0;
+    /* If last node mark it head*/
+    if (!curr-&gt;next)
+    {
+        *head = curr;
 
-    return 1 + getCount(head-&gt;next);
+        /* Update next to prev node */
+        curr-&gt;next = prev;
+        return;
+    }
+
+    /* Save curr-&gt;next node for recursive call */
+    node *next = curr-&gt;next;
+
+    /* and update next ..*/
+    curr-&gt;next = prev;
+
+    reverseUtil(next, curr, head);
 }
 
-/* 测试函数*/
+// A utility function to create a new node
+Node *newNode(int key)
+{
+    Node *temp = new Node;
+    temp-&gt;data = key;
+    temp-&gt;next = NULL;
+    return temp;
+}
+
+// A utility function to print a linked list
+void printlist(Node *head)
+{
+    while(head != NULL)
+    {
+        cout &lt;&lt; head-&gt;data &lt;&lt; &quot; &quot;;
+        head = head-&gt;next;
+    }
+    cout &lt;&lt; endl;
+}
+
+// Driver program to test above functions
 int main()
 {
-    /* 开始空链表 */
-    struct Node* head = NULL;
-
-    /* 使用 push() 构造链表
-     1-&gt;2-&gt;1-&gt;3-&gt;1  */
-    push(&amp;head, 1);
-    push(&amp;head, 3);
-    push(&amp;head, 1);
-    push(&amp;head, 2);
-    push(&amp;head, 1);
-
-    /* 计数函数 */
-    printf(&quot;count of nodes is %d&quot;, getCount(head));
+    Node *head1 = newNode(1);
+    head1-&gt;next = newNode(2);
+    head1-&gt;next-&gt;next = newNode(3);
+    head1-&gt;next-&gt;next-&gt;next = newNode(4);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next = newNode(5);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(6);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(7);
+    head1-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = newNode(8);
+    cout &lt;&lt; &quot;Given linked list\n&quot;;
+    printlist(head1);
+    reverse(&amp;head1);
+    cout &lt;&lt; &quot;\nReversed linked list\n&quot;;
+    printlist(head1);
     return 0;
 }
+</code></pre><p>###</p>
+<pre><code>Output:
+Given linked list
+1 2 3 4 5 6 7 8
 
-输出:
-count of nodes is 5
+Reversed linked list
+8 7 6 5 4 3 2 1
 </code></pre>
       
     </div>
@@ -465,8 +557,8 @@ count of nodes is 5
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/链表第2课（链表的插入）/" rel="next" title="链表| 第2课（链表的插入）">
-                <i class="fa fa-chevron-left"></i> 链表| 第2课（链表的插入）
+              <a href="/2018/03/12/链表第8课输出链表的中间结点值/" rel="next" title="链表 | 第8课（输出链表的中间结点值）">
+                <i class="fa fa-chevron-left"></i> 链表 | 第8课（输出链表的中间结点值）
               </a>
             
           </div>
@@ -474,10 +566,6 @@ count of nodes is 5
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/链表第5课（查找元素）/" rel="prev" title="链表 | 第5课（查找元素）">
-                链表 | 第5课（查找元素） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,7 +686,7 @@ count of nodes is 5
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代方案"><span class="nav-number">1.</span> <span class="nav-text">迭代方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归方案"><span class="nav-number">2.</span> <span class="nav-text">递归方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#int-getCount-head"><span class="nav-number">2.0.1.</span> <span class="nav-text">int getCount(head)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代方法"><span class="nav-number">1.</span> <span class="nav-text">迭代方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环第一步结束-i-e-在-next-curr-gt-next-之后"><span class="nav-number">2.</span> <span class="nav-text">循环第一步结束, i.e., 在 next = curr-&gt;next 之后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环一次之后"><span class="nav-number">3.</span> <span class="nav-text">循环一次之后</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时间复杂度-O-n"><span class="nav-number">3.1.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空间复杂度-O-1"><span class="nav-number">3.2.</span> <span class="nav-text">空间复杂度: O(1)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归方法"><span class="nav-number">4.</span> <span class="nav-text">递归方法:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时间复杂度-O-n-1"><span class="nav-number">4.1.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空间复杂度-O-1-1"><span class="nav-number">4.2.</span> <span class="nav-text">空间复杂度: O(1)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个更简单的方法"><span class="nav-number">5.</span> <span class="nav-text">一个更简单的方法</span></a></li></ol></div>
             
 
           </div>

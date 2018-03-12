@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。  为什么会有链表?数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。  数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。 在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。  例如, 如果有一个排序">
+<meta name="description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表 |第 1 课（链表的介绍）">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/链表第1课（链表的介绍）/index.html">
+<meta property="og:title" content="链表 | 第7课（获取第N个结点）">
+<meta property="og:url" content="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
-<meta property="og:description" content="跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。  为什么会有链表?数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。  数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。 在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。  例如, 如果有一个排序">
+<meta property="og:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png">
-<meta property="og:updated_time" content="2018-03-12T03:13:45.000Z">
+<meta property="og:updated_time" content="2018-03-12T05:05:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表 |第 1 课（链表的介绍）">
-<meta name="twitter:description" content="跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。  为什么会有链表?数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。  数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。 在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。  例如, 如果有一个排序">
-<meta name="twitter:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png">
+<meta name="twitter:title" content="链表 | 第7课（获取第N个结点）">
+<meta name="twitter:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/链表第1课（链表的介绍）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/"/>
 
 
 
 
 
-  <title>链表 |第 1 课（链表的介绍） | 跳跳魔王的技术博客</title>
+  <title>链表 | 第7课（获取第N个结点） | 跳跳魔王的技术博客</title>
   
 
 
@@ -236,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表第1课（链表的介绍）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="跳跳魔王">
@@ -253,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表 |第 1 课（链表的介绍）</h1>
+          <h1 class="post-title" itemprop="name headline">链表 | 第7课（获取第N个结点）</h1>
         
 
         <div class="post-meta">
@@ -265,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T13:06:20+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T12:58:23+08:00">
+                2018-03-12
               </time>
             
 
@@ -303,167 +301,163 @@
       
 
       
-        <p>跟数组类似, 链表也是一个线性的数据结构。跟数组不同的是, 链表的元素并不是相邻的; 而是通过指针联系在一起。</p>
-<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png" alt=""></p>
-<h3 id="为什么会有链表"><a href="#为什么会有链表" class="headerlink" title="为什么会有链表?"></a>为什么会有链表?</h3><p>数组可以用来存储相似类型的线性数据, 但是数组有以下的限制。</p>
-<ol>
-<li>数组的大小是固定的: 所以我们必须知道元素数量的上限。同时, 分配的内存对应了上限的使用限制。</li>
-<li>在数组中插入一个元素代价非常大, 因为要为新的元素创建空间, 还要移动已存在的元素。</li>
-</ol>
-<p>例如, 如果有一个排序后的 ID 数组 id[].</p>
-<pre><code>id[] = [1000, 1010, 1050, 2000, 2040].
-</code></pre><p>如果我们要插入一个新的元素 ID 1005, 然后还要排序, 我们需要移动所有位于 1000 (除了 1000)之后的元素。</p>
-<p>对数组进行删除也很麻烦, 除非使用一些特殊技术。例如, 要删除 1010, 位于其后的所有元素都得移动。</p>
-<h3 id="相比数组的优点"><a href="#相比数组的优点" class="headerlink" title="相比数组的优点"></a>相比数组的优点</h3><ol>
-<li>动态大小</li>
-<li>容易插入/删除</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h3><ol>
-<li>不允许随机访问。我们必须从第一个结点开始顺序访问元素。所以我们不能对链表进行折半查找。</li>
-<li>链表的每个元素都要额外的内存空间。</li>
-</ol>
-<h3 id="C语言表示法"><a href="#C语言表示法" class="headerlink" title="C语言表示法:"></a>C语言表示法:</h3><p>链表通常用指向头结点的指针表示。如果链表是空的, 头结点就是 <strong>NULL</strong>.</p>
-<p>结点通常有两个部分组成:</p>
-<ol>
-<li>数据</li>
-<li>指向下一个结点的指针</li>
-</ol>
-<p>在 C 语言中, 我们可以用结构图表示一个结点。下面的例子是一个带有整数的结点。</p>
-<pre><code>// 链表的结点
+        <p>编写一个函数 <strong>GetNth()</strong>，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。</p>
+<p>例如:</p>
+<pre><code>Input:  1-&gt;10-&gt;30-&gt;14,  index = 2
+Output: 30  
+The node at index 2 is 30
+</code></pre><h4 id="算法"><a href="#算法" class="headerlink" title="算法:"></a>算法:</h4><pre><code>1. 初始化 count = 0
+2. 循环链表
+     a. 如果 count 等于输入的索引，就返回当前结点
+         node
+     b. 递增 count
+     c. 当前指针后移
+</code></pre><h4 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;assert.h&gt;
+
+/* Link list node */
 struct Node
 {
-  int data;
-  struct Node *next;
-};
-</code></pre><p>下面，我们来创建一个含有 3 个结点的链表。</p>
-<pre><code>// 链表
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-
-struct Node 
-{
-  int data;
-  struct Node *next;
+    int data;
+    struct Node* next;
 };
 
-// 创建含有3个结点的链表
-int main()
+/* Given a reference (pointer to pointer) to the head
+    of a list and an int, push a new node on the front
+    of the list. */
+void push(struct Node** head_ref, int new_data)
 {
-  struct Node* head = NULL;
-  struct Node* second = NULL;
-  struct Node* third = NULL;
+    /* allocate node */
+    struct Node* new_node =
+            (struct Node*) malloc(sizeof(struct Node));
 
-  // 在堆里分配3个结点  
-  head = (struct Node*)malloc(sizeof(struct Node)); 
-  second = (struct Node*)malloc(sizeof(struct Node));
-  third = (struct Node*)malloc(sizeof(struct Node));
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
 
-  /* 动态分配了3块内存。 
-     这3块内存分别是 first, second 喝 third     
-       head           second           third
-        |                |               |
-        |                |               |
-    +---+-----+     +----+----+     +----+----+
-    | #  | #  |     | #  | #  |     |  # |  # |
-    +---+-----+     +----+----+     +----+----+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
 
-   # 井号表示随机的值。
-   数据是随机的，因为我们还没有制定 */
-
-  head-&gt;data = 1; //指定第一个结点的数据
-  head-&gt;next = second; // 把第一个结点和第二个结点连接起来
-
-  /* 现在第一个结点有数据了，它的下一个结点是 second.
-
-       head          second         third
-        |              |              |
-        |              |              |
-    +---+---+     +----+----+     +-----+----+
-    | 1  | o-----&gt;| #  | #  |     |  #  | #  |
-    +---+---+     +----+----+     +-----+----+    
-  */ 
-
-  second-&gt;data = 2; //指定第二个结点的数据
-  second-&gt;next = third; // 把第二个结点和第三个结点连接起来
-
-  /* 现在第二个结点有数据了，他的下一个结点是 third.  
-
-       head         second         third
-        |             |             |
-        |             |             |
-    +---+---+     +---+---+     +----+----+
-    | 1  | o-----&gt;| 2 | o-----&gt; |  # |  # |
-    +---+---+     +---+---+     +----+----+      */   
-
-  third-&gt;data = 3; //指定第三个结点的数据
-  third-&gt;next = NULL;
-
-  /* 现在第三个结点也有数据了, 他的后继指针为 NULL 表示链表结束在这里.
-
-           head    
-             |
-             | 
-        +---+---+     +---+---+       +----+------+
-        | 1  | o-----&gt;|  2  | o-----&gt; |  3 | NULL |
-        +---+---+     +---+---+       +----+------+       
-
-
-    注意只有头结点可以完整的表示整个链表. */     
-
-  return 0;
-}
-</code></pre><h3 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h3><p>在上面的程序里, 我们创建了一个含有3个结点的链表。现在我们来遍历这个链表, 打印每个结点的数据。为了遍历方便, 我们写了一个函数 <strong>printList()</strong>来打印所给的链表。</p>
-<blockquote>
-<p><strong>我们强烈建议你在查看解决方案前，自己先练习一下。</strong></p>
-</blockquote>
-<pre><code>// 遍历链表的 C 语言实现
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-
-struct Node 
-{
-  int data;
-  struct Node *next;
-};
-
-// 打印方法
-void printList(struct Node *n)
-{
-  while (n != NULL)
-  {
-     printf(&quot; %d &quot;, n-&gt;data);
-     n = n-&gt;next;
-  }
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
 }
 
+/* Takes head pointer of the linked list and index
+    as arguments and return data at index*/
+int GetNth(struct Node* head, int index)
+{
+    struct Node* current = head;
+    int count = 0; /* the index of the node we&apos;re currently
+                  looking at */
+    while (current != NULL)
+    {
+       if (count == index)
+          return(current-&gt;data);
+       count++;
+       current = current-&gt;next;
+    }
+
+    /* if we get to this line, the caller was asking
+       for a non-existent element so we assert fail */
+    assert(0);              
+}
+
+/* Drier program to test above function*/
 int main()
 {
-  struct Node* head = NULL;
-  struct Node* second = NULL;
-  struct Node* third = NULL;
+    /* Start with the empty list */
+    struct Node* head = NULL;
 
-  // 在堆中分配3个结点  
-  head  = (struct Node*)malloc(sizeof(struct Node)); 
-  second = (struct Node*)malloc(sizeof(struct Node));
-  third  = (struct Node*)malloc(sizeof(struct Node));
+    /* Use push() to construct below list
+     1-&gt;12-&gt;1-&gt;4-&gt;1  */
+    push(&amp;head, 1);
+    push(&amp;head, 4);
+    push(&amp;head, 1);
+    push(&amp;head, 12);
+    push(&amp;head, 1);  
 
-  head-&gt;data = 1; //指定第一个结点的数据
-  head-&gt;next = second; // 连接到第二个结点   
-
-  second-&gt;data = 2; //指定第二个结点的数据
-  second-&gt;next = third;  
-
-  third-&gt;data = 3; //指定第三个结点的数据
-  third-&gt;next = NULL;
-
-  printList(head);
-
-  return 0;
+    /* Check the count function */
+    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
+    getchar();
 }
 
 Output:
- 1  2  3
-</code></pre>
+Element at index 3 is 4
+</code></pre><h4 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4><h4 id="方法-2-使用递归"><a href="#方法-2-使用递归" class="headerlink" title="方法 2- 使用递归"></a>方法 2- 使用递归</h4><h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法:"></a>算法:</h4><pre><code>getnth(node,n)
+1. 初始化 count = 1
+2. if count == n
+     return node-&gt;data
+3. else
+    return getnth(node-&gt;next,n-1)
+</code></pre><h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list 
+// using recursion
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/*  Given a reference (pointer to pointer) to 
+    the head of a list and an int, push a 
+    new node on the front of the list. */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+            (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data */
+    new_node-&gt;data = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref) = new_node;
+}
+
+/* Takes head pointer of the linked list and index
+    as arguments and return data at index*/
+int GetNth(struct Node *head,int n)
+{
+    int count = 1;
+
+    //if count equal too n return node-&gt;data
+    if(count == n)
+    return head-&gt;data;
+
+    //recursively decrease n and increase 
+    // head to next pointer 
+    return GetNth(head-&gt;next, n-1); 
+}
+
+/* Drier program to test above function*/
+int main()
+{
+     /* Start with the empty list */
+    struct Node* head = NULL;
+
+    /* Use push() to construct below list
+     1-&gt;12-&gt;1-&gt;4-&gt;1  */
+    push(&amp;head, 1);
+    push(&amp;head, 4);
+    push(&amp;head, 1);
+    push(&amp;head, 12);
+    push(&amp;head, 1);  
+
+    /* Check the count function */
+    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
+    getchar();
+}
+
+Output:
+Element at index 3 is 1
+</code></pre><h4 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4>
       
     </div>
     
@@ -487,8 +481,8 @@ Output:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/链表第3课 (删除一个结点)/" rel="next" title="链表 |第 3 课（删除一个结点）">
-                <i class="fa fa-chevron-left"></i> 链表 |第 3 课（删除一个结点）
+              <a href="/2018/03/09/链表第6课（交换结点而不交换数据）/" rel="next" title="链表 | 第6课（交换结点而不交换数据）">
+                <i class="fa fa-chevron-left"></i> 链表 | 第6课（交换结点而不交换数据）
               </a>
             
           </div>
@@ -497,8 +491,8 @@ Output:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/09/链表第2课（链表的插入）/" rel="prev" title="链表| 第2课（链表的插入）">
-                链表| 第2课（链表的插入） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/12/链表第8课输出链表的中间结点值/" rel="prev" title="链表 | 第8课（输出链表的中间结点值）">
+                链表 | 第8课（输出链表的中间结点值） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -620,7 +614,7 @@ Output:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么会有链表"><span class="nav-number">1.</span> <span class="nav-text">为什么会有链表?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相比数组的优点"><span class="nav-number">2.</span> <span class="nav-text">相比数组的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">3.</span> <span class="nav-text">缺点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C语言表示法"><span class="nav-number">4.</span> <span class="nav-text">C语言表示法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历链表"><span class="nav-number">5.</span> <span class="nav-text">遍历链表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2-使用递归"><span class="nav-number">4.</span> <span class="nav-text">方法 2- 使用递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法-1"><span class="nav-number">5.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-1"><span class="nav-number">6.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n-1"><span class="nav-number">7.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li></ol></div>
             
 
           </div>
