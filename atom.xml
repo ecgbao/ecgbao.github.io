@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-12T05:42:08.000Z</updated>
+  <updated>2018-03-20T07:51:31.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>链表 | 第10课（查找链表中的循环）</title>
+    <link href="http://yoursite.com/2018/03/20/%E9%93%BE%E8%A1%A8%E7%AC%AC10%E8%AF%BE%EF%BC%88%E6%9F%A5%E6%89%BE%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%BE%AA%E7%8E%AF%EF%BC%89/"/>
+    <id>http://yoursite.com/2018/03/20/链表第10课（查找链表中的循环）/</id>
+    <published>2018-03-20T07:29:06.000Z</published>
+    <updated>2018-03-20T07:51:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>指定一个链表, 判断其中是否存在循环。下面的图表表示链表中存在一个循环。</p><p><img src="https://www.geeksforgeeks.org/wp-content/uploads/2009/04/Linked-List-Loop.gif" alt=""></p><p>下面用两种不同方法来实现</p><h4 id="使用哈希"><a href="#使用哈希" class="headerlink" title="使用哈希:"></a>使用哈希:</h4><p>顺序遍历链表，把结点地址放在一个哈希表中。任何时候, 如果地址为 NULL 表示链表到头，就返回 false, 如果当前结点的后继结点地址跟哈希表里的某个地址相同就返回 true.</p><pre><code>// C++ program to detect loop in a linked list#include&lt;bits/stdc++.h&gt;using namespace std;/* Link list node */struct Node{    int data;    struct Node* next;};void push(struct Node** head_ref, int new_data){    /* allocate node */    struct Node* new_node = new Node;    /* put in the data  */    new_node-&gt;data  = new_data;    /* link the old list off the new node */    new_node-&gt;next = (*head_ref);    /* move the head to point to the new node */    (*head_ref)    = new_node;}// Returns true if there is a loop in linked list// else returns false.bool detectLoop(struct Node *h){    unordered_set&lt;Node *&gt; s;    while (h != NULL)    {        // If we have already has this node        // in hashmap it means their is a cycle        // (Because you we encountering the        // node second time).        if (s.find(h) != s.end())            return true;        // If we are seeing the node for        // the first time, insert it in hash        s.insert(h);        h = h-&gt;next;    }    return false;}/* Drier program to test above function*/int main(){    /* Start with the empty list */    struct Node* head = NULL;    push(&amp;head, 20);    push(&amp;head, 4);    push(&amp;head, 15);    push(&amp;head, 10);    /* Create a loop for testing */    head-&gt;next-&gt;next-&gt;next-&gt;next = head;    if (detectLoop(head))        cout &lt;&lt; &quot;Loop found&quot;;    else        cout &lt;&lt; &quot;No Loop&quot;;    return 0;}输出 :Loop Found</code></pre><h4 id="标记访问过的结点"><a href="#标记访问过的结点" class="headerlink" title="标记访问过的结点:"></a>标记访问过的结点:</h4><p>这个方案需要修改链表的数据结构。每个结点有个 visited 标记。遍历整个链表，标记所有访问过的结点。如果你再次看见访问过的结点，就表明存在一个循环。这个方案的时间复杂度是 O(n), 但是每个结点需要额外的信息。<br>这个方案可以修改成不修改链表的数据结构, 然后使用哈希来实现。仅仅是把访问过的结点地址放进哈希表，如果发现后面访问的地址在哈希表里存在，就表示有循环存在。</p><h4 id="循环查找算法"><a href="#循环查找算法" class="headerlink" title="循环查找算法:"></a>循环查找算法:</h4><p>这是个最快的方法。使用两个指针进行遍历。一个指针每次向前移动一步，另外一个指针移动两步。如果这两个指针在某个结点相遇，就表明存在一个循环。如果指针不相遇就表明链表不存在循环。</p><h4 id="循环查找算法的实现"><a href="#循环查找算法的实现" class="headerlink" title="循环查找算法的实现:"></a>循环查找算法的实现:</h4><pre><code>// C program to detect loop in a linked list#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;/* Link list node */struct Node{    int data;    struct Node* next;};void push(struct Node** head_ref, int new_data){    /* allocate node */    struct Node* new_node =          (struct Node*) malloc(sizeof(struct Node));    /* put in the data  */    new_node-&gt;data  = new_data;    /* link the old list off the new node */    new_node-&gt;next = (*head_ref);    /* move the head to point to the new node */    (*head_ref)    = new_node;}int detectloop(struct Node *list){    struct Node  *slow_p = list, *fast_p = list;    while (slow_p &amp;&amp; fast_p &amp;&amp; fast_p-&gt;next )    {        slow_p = slow_p-&gt;next;        fast_p  = fast_p-&gt;next-&gt;next;        if (slow_p == fast_p)        {           printf(&quot;Found Loop&quot;);           return 1;        }    }    return 0;}/* Drier program to test above function*/int main(){    /* Start with the empty list */    struct Node* head = NULL;    push(&amp;head, 20);    push(&amp;head, 4);    push(&amp;head, 15);    push(&amp;head, 10);    /* Create a loop for testing */    head-&gt;next-&gt;next-&gt;next-&gt;next = head;    detectloop(head);    return 0;}输出:Found loop</code></pre><h5 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h5><h5 id="空间复杂度-O-1"><a href="#空间复杂度-O-1" class="headerlink" title="空间复杂度: O(1)"></a>空间复杂度: O(1)</h5>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;指定一个链表, 判断其中是否存在循环。下面的图表表示链表中存在一个循环。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.geeksforgeeks.org/wp-content/uploads/2009/04/Linked-List-Loop.gif&quot; alt=
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>链表 | 第9课（翻转链表）</title>
