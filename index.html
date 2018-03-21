@@ -231,6 +231,327 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/链表第11课（合并两个有序链表）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="跳跳魔王">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="跳跳魔王的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/链表第11课（合并两个有序链表）/" itemprop="url">链表 | 第11课（合并两个有序链表）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T08:54:29+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>变形一个 SortedMerge() 函数，带有两个链表参数, 每个链表都是按照升序排列, 然后把这两个链表合并成一个升序的链表。 SortedMerge() 应该返回一个全新的链表。新链表应该把两个链表的结点拼接起来。</p>
+<p>例如第一个链表是 5-&gt;10-&gt;15 第二个链表是 2-&gt;3-&gt;20, 然后 SortedMerge() 应该返回 2-&gt;3-&gt;5-&gt;10-&gt;15-&gt;20.</p>
+<p>有很多情况需要处理: ‘a’ 或者 ‘b’ 可能为空, 处理 ‘a’ 或 ‘b’ 过程中可能首先跑完某个, 最后的问题是开始结果是空, 然后通过‘a’ 和 ‘b’ 把它建立起来。</p>
+<h4 id="方法-1-使用仿制结点"><a href="#方法-1-使用仿制结点" class="headerlink" title="方法 1 (使用仿制结点)"></a>方法 1 (使用仿制结点)</h4><p>这里的策略是使用一个临时的仿制结点，作为结果链表的开始。Tail 指针总是表示结果链表的最后一个结点, 所以添加新结点很容易。<br>在结果链表是空的时候，仿制结点会给尾部指针一些指向作为初始化。仿制结点是有效的, 因为它只是临时的, 而且它在栈内分配。循环进行, 从 ‘a’ 或者 ‘b’ 移除一个结点, 然后添加到尾部。当完事后，结果就保存在 dummy.next.</p>
+<pre><code>/* C/C++ program to merge two sorted linked lists */
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;assert.h&gt;
+
+/* Link list node */
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+/* pull off the front node of the source and put it in dest */
+void MoveNode(struct Node** destRef, struct Node** sourceRef);
+
+/* Takes two lists sorted in increasing order, and splices
+   their nodes together to make one big sorted list which
+   is returned.  */
+struct Node* SortedMerge(struct Node* a, struct Node* b)
+{
+    /* a dummy first node to hang the result on */
+    struct Node dummy;
+
+    /* tail points to the last result node  */
+    struct Node* tail = &amp;dummy;
+
+    /* so tail-&gt;next is the place to add new nodes
+      to the result. */
+    dummy.next = NULL;
+    while (1)
+    {
+        if (a == NULL)
+        {
+            /* if either list runs out, use the
+               other list */
+            tail-&gt;next = b;
+            break;
+        }
+        else if (b == NULL)
+        {
+            tail-&gt;next = a;
+            break;
+        }
+        if (a-&gt;data &lt;= b-&gt;data)
+            MoveNode(&amp;(tail-&gt;next), &amp;a);
+        else
+            MoveNode(&amp;(tail-&gt;next), &amp;b);
+
+        tail = tail-&gt;next;
+    }
+    return(dummy.next);
+}
+
+/* UTILITY FUNCTIONS */
+/* MoveNode() function takes the node from the front of the
+   source, and move it to the front of the dest.
+   It is an error to call this with the source list empty.
+
+   Before calling MoveNode():
+   source == {1, 2, 3}
+   dest == {1, 2, 3}
+
+   Affter calling MoveNode():
+   source == {2, 3}
+   dest == {1, 1, 2, 3} */
+void MoveNode(struct Node** destRef, struct Node** sourceRef)
+{
+    /* the front source node  */
+    struct Node* newNode = *sourceRef;
+    assert(newNode != NULL);
+
+    /* Advance the source pointer */
+    *sourceRef = newNode-&gt;next;
+
+    /* Link the old dest off the new node */
+    newNode-&gt;next = *destRef;
+
+    /* Move dest to point to the new node */
+    *destRef = newNode;
+}
+
+
+/* Function to insert a node at the beginging of the
+   linked list */
+void push(struct Node** head_ref, int new_data)
+{
+    /* allocate node */
+    struct Node* new_node =
+        (struct Node*) malloc(sizeof(struct Node));
+
+    /* put in the data  */
+    new_node-&gt;data  = new_data;
+
+    /* link the old list off the new node */
+    new_node-&gt;next = (*head_ref);
+
+    /* move the head to point to the new node */
+    (*head_ref)    = new_node;
+}
+
+/* Function to print nodes in a given linked list */
+void printList(struct Node *node)
+{
+    while (node!=NULL)
+    {
+        printf(&quot;%d &quot;, node-&gt;data);
+        node = node-&gt;next;
+    }
+}
+
+/* Drier program to test above functions*/
+int main()
+{
+    /* Start with the empty list */
+    struct Node* res = NULL;
+    struct Node* a = NULL;
+    struct Node* b = NULL;
+
+    /* Let us create two sorted linked lists to test
+      the functions
+       Created lists, a: 5-&gt;10-&gt;15,  b: 2-&gt;3-&gt;20 */
+    push(&amp;a, 15);
+    push(&amp;a, 10);
+    push(&amp;a, 5);
+
+    push(&amp;b, 20);
+    push(&amp;b, 3);
+    push(&amp;b, 2);
+
+    /* Remove duplicates from linked list */
+    res = SortedMerge(a, b);
+
+    printf(&quot;Merged Linked List is: \n&quot;);
+    printList(res);
+
+    return 0;
+}
+</code></pre><p>#<br>    输出 :</p>
+<pre><code>Merged Linked List is: 
+2 3 5 10 15 20 
+</code></pre><h4 id="方法-2-使用本地引用"><a href="#方法-2-使用本地引用" class="headerlink" title="方法 2 (使用本地引用)"></a>方法 2 (使用本地引用)</h4><p>这个方案在结构上跟上面的很相似, 但是它没有使用仿制结点。替代方案是, 它维护了一个结构体 node** 指针, lastPtrRef 这指针总是指向结果链表的最后一个结点。这个方式解决了仿制结点解决的问题 — 处理了结果链表为空的情况。</p>
+<pre><code>struct Node* SortedMerge(struct Node* a, struct Node* b) 
+{
+  struct Node* result = NULL;
+
+  /* point to the last result pointer */
+  struct Node** lastPtrRef = &amp;result; 
+
+  while(1) 
+  {
+    if (a == NULL) 
+    {
+      *lastPtrRef = b;
+       break;
+    }
+    else if (b==NULL) 
+    {
+       *lastPtrRef = a;
+       break;
+    }
+    if(a-&gt;data &lt;= b-&gt;data) 
+    {
+      MoveNode(lastPtrRef, &amp;a);
+    }
+    else
+    {
+      MoveNode(lastPtrRef, &amp;b);
+    }
+
+    /* tricky: advance to point to the next &quot;.next&quot; field */
+    lastPtrRef = &amp;((*lastPtrRef)-&gt;next); 
+  }
+  return(result);
+}
+</code></pre><h4 id="方法-3-使用递归"><a href="#方法-3-使用递归" class="headerlink" title="方法 3 (使用递归)"></a>方法 3 (使用递归)</h4><p>递归的代码比迭代代码更加清晰。你可能不太想使用递归方法，因为它会随着链表的长度成比例的使用栈空间。</p>
+<pre><code>struct Node* SortedMerge(struct Node* a, struct Node* b) 
+{
+  struct Node* result = NULL;
+
+  /* Base cases */
+  if (a == NULL) 
+     return(b);
+  else if (b==NULL) 
+     return(a);
+
+  /* Pick either a or b, and recur */
+  if (a-&gt;data &lt;= b-&gt;data) 
+  {
+     result = a;
+     result-&gt;next = SortedMerge(a-&gt;next, b);
+  }
+  else
+  {
+     result = b;
+     result-&gt;next = SortedMerge(a, b-&gt;next);
+  }
+  return(result);
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/链表第10课（查找链表中的循环）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2883,227 +3204,13 @@ Output:
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表第3课 (删除一个结点)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="跳跳魔王">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="跳跳魔王的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/09/链表第3课 (删除一个结点)/" itemprop="url">链表 |第 3 课（删除一个结点）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T09:02:05+08:00">
-                2018-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在单链表章节我们已经讨论了 <a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8-%E7%AC%AC-1-%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%89/" target="_blank" rel="noopener">链表的介绍</a> 和 <a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8%20%7C%20%E7%AC%AC2%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5%EF%BC%89/" target="_blank" rel="noopener">链表的插入</a>。</p>
-<p>我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。<br>要从链表里删除一个结点, 我们需要以下步骤。</p>
-<ol>
-<li>找到待删结点的前驱结点。</li>
-<li>修改前驱结点的Next.</li>
-<li>释放被删除结点的内存。</li>
-</ol>
-<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png" alt=""></p>
-<blockquote>
-<p><strong><em>建议:</em></strong> 在查看解决方案前，请自己尝试练习。</p>
-</blockquote>
-<p>因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要释放被删除结点的内存。</p>
-<h3 id="下面是C-C-代码"><a href="#下面是C-C-代码" class="headerlink" title="下面是C/C++代码"></a>下面是C/C++代码</h3><pre><code>// 下面的代码已经通过编译
-
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-// 结点定义
-struct Node
-{
-    int data;
-    struct Node *next;
-};
-
-/* 引用链表的头结点和一个整数值, 在链表前面插入一个新的结点 */
-void push(struct Node** head_ref, int new_data)
-{
-    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
-    new_node-&gt;data  = new_data;
-    new_node-&gt;next = (*head_ref);
-    (*head_ref)    = new_node;
-}
-
-/* 引用链表的头结点和一个 key, 然后删除首次遇见的结点 */
-void deleteNode(struct Node **head_ref, int key)
-{
-    // 保存头结点
-    struct Node* temp = *head_ref, *prev;
-
-    // 如果要删除的结点恰巧是头结点
-    if (temp != NULL &amp;&amp; temp-&gt;data == key)
-    {
-        *head_ref = temp-&gt;next;   // 修改头结点
-        free(temp);               // 释放头结点
-        return;
-    }
-
-    // 查找要删除的 key, 因为我们要修改&apos;prev-&gt;next&apos;，所以需要跟踪前驱结点
-    while (temp != NULL &amp;&amp; temp-&gt;data != key)
-    {
-        prev = temp;
-        temp = temp-&gt;next;
-    }
-
-    // 如果链表里没有这个 key
-    if (temp == NULL) return;
-
-    // 断开结点
-    prev-&gt;next = temp-&gt;next;
-
-    free(temp);  // 释放内存
-}
-
-// 下面的函数打印链表的内容
-void printList(struct Node *node)
-{
-    while (node != NULL)
-    {
-        printf(&quot; %d &quot;, node-&gt;data);
-        node = node-&gt;next;
-    }
-}
-
-/* 测试函数*/
-int main()
-{
-    /* 刚开始的空链表 */
-    struct Node* head = NULL;
-
-    push(&amp;head, 7);
-    push(&amp;head, 1);
-    push(&amp;head, 3);
-    push(&amp;head, 2);
-
-    puts(&quot;Created Linked List: &quot;);
-    printList(head);
-    deleteNode(&amp;head, 1);
-    puts(&quot;\nLinked List after Deletion of 1: &quot;);
-    printList(head);
-    return 0;
-}
-
-
-输出:
-
-Created Linked List:
- 2  3  1  7
-Linked List after Deletion of 1:
- 2  3  7
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -3147,7 +3254,7 @@ Linked List after Deletion of 1:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

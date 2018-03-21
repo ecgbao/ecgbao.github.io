@@ -81,17 +81,13 @@
 
 
 
-<meta name="description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
-<meta property="og:type" content="article">
-<meta property="og:title" content="链表 | 第7课（获取第N个结点）">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="跳跳魔王的技术博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
-<meta property="og:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T05:05:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表 | 第7课（获取第N个结点）">
-<meta name="twitter:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
+<meta name="twitter:title" content="跳跳魔王的技术博客">
 
 
 
@@ -121,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>链表 | 第7课（获取第N个结点） | 跳跳魔王的技术博客</title>
+  <title>跳跳魔王的技术博客</title>
   
 
 
@@ -146,7 +142,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -219,9 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -234,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/链表第3课 (删除一个结点)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="跳跳魔王">
@@ -251,7 +248,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表 | 第7课（获取第N个结点）</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/链表第3课 (删除一个结点)/" itemprop="url">链表 |第 3 课（删除一个结点）</a></h1>
         
 
         <div class="post-meta">
@@ -263,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T12:58:23+08:00">
-                2018-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T09:02:05+08:00">
+                2018-03-09
               </time>
             
 
@@ -301,163 +300,110 @@
       
 
       
-        <p>编写一个函数 <strong>GetNth()</strong>，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。</p>
-<p>例如:</p>
-<pre><code>Input:  1-&gt;10-&gt;30-&gt;14,  index = 2
-Output: 30  
-The node at index 2 is 30
-</code></pre><h4 id="算法"><a href="#算法" class="headerlink" title="算法:"></a>算法:</h4><pre><code>1. 初始化 count = 0
-2. 循环链表
-     a. 如果 count 等于输入的索引，就返回当前结点
-         node
-     b. 递增 count
-     c. 当前指针后移
-</code></pre><h4 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list
+        
+          
+            <p>在单链表章节我们已经讨论了 <a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8-%E7%AC%AC-1-%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%89/" target="_blank" rel="noopener">链表的介绍</a> 和 <a href="https://ecgbao.github.io/2018/03/09/%E9%93%BE%E8%A1%A8%20%7C%20%E7%AC%AC2%E8%AF%BE%EF%BC%88%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5%EF%BC%89/" target="_blank" rel="noopener">链表的插入</a>。</p>
+<p>我们阐述一下问题描述，帮助理解删除的过程。给定一个 ‘key’, 删除链表里第一个出现的结点。<br>要从链表里删除一个结点, 我们需要以下步骤。</p>
+<ol>
+<li>找到待删结点的前驱结点。</li>
+<li>修改前驱结点的Next.</li>
+<li>释放被删除结点的内存。</li>
+</ol>
+<p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/05/Linkedlist_deletion.png" alt=""></p>
+<blockquote>
+<p><strong><em>建议:</em></strong> 在查看解决方案前，请自己尝试练习。</p>
+</blockquote>
+<p>因为链表的每个结点都是通过 malloc() 动态分配的, 所以我们需要释放被删除结点的内存。</p>
+<h3 id="下面是C-C-代码"><a href="#下面是C-C-代码" class="headerlink" title="下面是C/C++代码"></a>下面是C/C++代码</h3><pre><code>// 下面的代码已经通过编译
+
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
-#include &lt;assert.h&gt;
 
-/* Link list node */
+// 结点定义
 struct Node
 {
     int data;
-    struct Node* next;
+    struct Node *next;
 };
 
-/* Given a reference (pointer to pointer) to the head
-    of a list and an int, push a new node on the front
-    of the list. */
+/* 引用链表的头结点和一个整数值, 在链表前面插入一个新的结点 */
 void push(struct Node** head_ref, int new_data)
 {
-    /* allocate node */
-    struct Node* new_node =
-            (struct Node*) malloc(sizeof(struct Node));
-
-    /* put in the data  */
+    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
     new_node-&gt;data  = new_data;
-
-    /* link the old list off the new node */
     new_node-&gt;next = (*head_ref);
-
-    /* move the head to point to the new node */
     (*head_ref)    = new_node;
 }
 
-/* Takes head pointer of the linked list and index
-    as arguments and return data at index*/
-int GetNth(struct Node* head, int index)
+/* 引用链表的头结点和一个 key, 然后删除首次遇见的结点 */
+void deleteNode(struct Node **head_ref, int key)
 {
-    struct Node* current = head;
-    int count = 0; /* the index of the node we&apos;re currently
-                  looking at */
-    while (current != NULL)
+    // 保存头结点
+    struct Node* temp = *head_ref, *prev;
+
+    // 如果要删除的结点恰巧是头结点
+    if (temp != NULL &amp;&amp; temp-&gt;data == key)
     {
-       if (count == index)
-          return(current-&gt;data);
-       count++;
-       current = current-&gt;next;
+        *head_ref = temp-&gt;next;   // 修改头结点
+        free(temp);               // 释放头结点
+        return;
     }
 
-    /* if we get to this line, the caller was asking
-       for a non-existent element so we assert fail */
-    assert(0);              
+    // 查找要删除的 key, 因为我们要修改&apos;prev-&gt;next&apos;，所以需要跟踪前驱结点
+    while (temp != NULL &amp;&amp; temp-&gt;data != key)
+    {
+        prev = temp;
+        temp = temp-&gt;next;
+    }
+
+    // 如果链表里没有这个 key
+    if (temp == NULL) return;
+
+    // 断开结点
+    prev-&gt;next = temp-&gt;next;
+
+    free(temp);  // 释放内存
 }
 
-/* Drier program to test above function*/
+// 下面的函数打印链表的内容
+void printList(struct Node *node)
+{
+    while (node != NULL)
+    {
+        printf(&quot; %d &quot;, node-&gt;data);
+        node = node-&gt;next;
+    }
+}
+
+/* 测试函数*/
 int main()
 {
-    /* Start with the empty list */
+    /* 刚开始的空链表 */
     struct Node* head = NULL;
 
-    /* Use push() to construct below list
-     1-&gt;12-&gt;1-&gt;4-&gt;1  */
+    push(&amp;head, 7);
     push(&amp;head, 1);
-    push(&amp;head, 4);
-    push(&amp;head, 1);
-    push(&amp;head, 12);
-    push(&amp;head, 1);  
+    push(&amp;head, 3);
+    push(&amp;head, 2);
 
-    /* Check the count function */
-    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
-    getchar();
+    puts(&quot;Created Linked List: &quot;);
+    printList(head);
+    deleteNode(&amp;head, 1);
+    puts(&quot;\nLinked List after Deletion of 1: &quot;);
+    printList(head);
+    return 0;
 }
 
-Output:
-Element at index 3 is 4
-</code></pre><h4 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4><h4 id="方法-2-使用递归"><a href="#方法-2-使用递归" class="headerlink" title="方法 2- 使用递归"></a>方法 2- 使用递归</h4><h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法:"></a>算法:</h4><pre><code>getnth(node,n)
-1. 初始化 count = 1
-2. if count == n
-     return node-&gt;data
-3. else
-    return getnth(node-&gt;next,n-1)
-</code></pre><h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list 
-// using recursion
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
 
-/* Link list node */
-struct Node
-{
-    int data;
-    struct Node* next;
-};
+输出:
 
-/*  Given a reference (pointer to pointer) to 
-    the head of a list and an int, push a 
-    new node on the front of the list. */
-void push(struct Node** head_ref, int new_data)
-{
-    /* allocate node */
-    struct Node* new_node =
-            (struct Node*) malloc(sizeof(struct Node));
-
-    /* put in the data */
-    new_node-&gt;data = new_data;
-
-    /* link the old list off the new node */
-    new_node-&gt;next = (*head_ref);
-
-    /* move the head to point to the new node */
-    (*head_ref) = new_node;
-}
-
-/* Takes head pointer of the linked list and index
-    as arguments and return data at index*/
-int GetNth(struct Node *head,int n)
-{
-    int count = 1;
-
-    //if count equal too n return node-&gt;data
-    if(count == n)
-    return head-&gt;data;
-
-    //recursively decrease n and increase 
-    // head to next pointer 
-    return GetNth(head-&gt;next, n-1); 
-}
-
-/* Drier program to test above function*/
-int main()
-{
-     /* Start with the empty list */
-    struct Node* head = NULL;
-
-    /* Use push() to construct below list
-     1-&gt;12-&gt;1-&gt;4-&gt;1  */
-    push(&amp;head, 1);
-    push(&amp;head, 4);
-    push(&amp;head, 1);
-    push(&amp;head, 12);
-    push(&amp;head, 1);  
-
-    /* Check the count function */
-    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
-    getchar();
-}
-
-Output:
-Element at index 3 is 1
-</code></pre><h4 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4>
+Created Linked List:
+ 2  3  1  7
+Linked List after Deletion of 1:
+ 2  3  7
+</code></pre>
+          
+        
       
     </div>
     
@@ -474,32 +420,12 @@ Element at index 3 is 1
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/03/09/链表第6课（交换结点而不交换数据）/" rel="next" title="链表 | 第6课（交换结点而不交换数据）">
-                <i class="fa fa-chevron-left"></i> 链表 | 第6课（交换结点而不交换数据）
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/12/链表第8课输出链表的中间结点值/" rel="prev" title="链表 | 第8课（输出链表的中间结点值）">
-                链表 | 第8课（输出链表的中间结点值） <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -509,11 +435,14 @@ Element at index 3 is 1
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -521,10 +450,6 @@ Element at index 3 is 1
 
 
           
-
-  
-
-
 
         </div>
         
@@ -545,17 +470,8 @@ Element at index 3 is 1
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,22 +520,6 @@ Element at index 3 is 1
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2-使用递归"><span class="nav-number">4.</span> <span class="nav-text">方法 2- 使用递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法-1"><span class="nav-number">5.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-1"><span class="nav-number">6.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n-1"><span class="nav-number">7.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -757,10 +657,6 @@ Element at index 3 is 1
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

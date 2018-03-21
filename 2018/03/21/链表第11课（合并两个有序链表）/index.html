@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="跳跳魔王的技术博客" type="application/atom+xml" />
 
@@ -81,17 +83,17 @@
 
 
 
-<meta name="description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
+<meta name="description" content="变形一个 SortedMerge() 函数，带有两个链表参数, 每个链表都是按照升序排列, 然后把这两个链表合并成一个升序的链表。 SortedMerge() 应该返回一个全新的链表。新链表应该把两个链表的结点拼接起来。 例如第一个链表是 5-&amp;gt;10-&amp;gt;15 第二个链表是 2-&amp;gt;3-&amp;gt;20, 然后 SortedMerge() 应该返回 2-&amp;gt;3-&amp;gt;5-&amp;gt;1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表 | 第7课（获取第N个结点）">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/index.html">
+<meta property="og:title" content="链表 | 第11课（合并两个有序链表）">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/链表第11课（合并两个有序链表）/index.html">
 <meta property="og:site_name" content="跳跳魔王的技术博客">
-<meta property="og:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
+<meta property="og:description" content="变形一个 SortedMerge() 函数，带有两个链表参数, 每个链表都是按照升序排列, 然后把这两个链表合并成一个升序的链表。 SortedMerge() 应该返回一个全新的链表。新链表应该把两个链表的结点拼接起来。 例如第一个链表是 5-&amp;gt;10-&amp;gt;15 第二个链表是 2-&amp;gt;3-&amp;gt;20, 然后 SortedMerge() 应该返回 2-&amp;gt;3-&amp;gt;5-&amp;gt;1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T05:05:59.000Z">
+<meta property="og:updated_time" content="2018-03-21T01:36:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表 | 第7课（获取第N个结点）">
-<meta name="twitter:description" content="编写一个函数 GetNth()，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。 例如: Input:  1-&amp;gt;10-&amp;gt;30-&amp;gt;14,  index = 2 Output: 30   The node at index 2 is 30 算法:1. 初始化 count = 0 2. 循环链表      a. 如果 count 等于输入的索引，就返回当前结点">
+<meta name="twitter:title" content="链表 | 第11课（合并两个有序链表）">
+<meta name="twitter:description" content="变形一个 SortedMerge() 函数，带有两个链表参数, 每个链表都是按照升序排列, 然后把这两个链表合并成一个升序的链表。 SortedMerge() 应该返回一个全新的链表。新链表应该把两个链表的结点拼接起来。 例如第一个链表是 5-&amp;gt;10-&amp;gt;15 第二个链表是 2-&amp;gt;3-&amp;gt;20, 然后 SortedMerge() 应该返回 2-&amp;gt;3-&amp;gt;5-&amp;gt;1">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/21/链表第11课（合并两个有序链表）/"/>
 
 
 
 
 
-  <title>链表 | 第7课（获取第N个结点） | 跳跳魔王的技术博客</title>
+  <title>链表 | 第11课（合并两个有序链表） | 跳跳魔王的技术博客</title>
   
 
 
@@ -234,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/链表第7课获取第N个结点/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/链表第11课（合并两个有序链表）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="跳跳魔王">
@@ -251,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表 | 第7课（获取第N个结点）</h1>
+          <h1 class="post-title" itemprop="name headline">链表 | 第11课（合并两个有序链表）</h1>
         
 
         <div class="post-meta">
@@ -263,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T12:58:23+08:00">
-                2018-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T08:54:29+08:00">
+                2018-03-21
               </time>
             
 
@@ -301,21 +303,14 @@
       
 
       
-        <p>编写一个函数 <strong>GetNth()</strong>，输入参数是一个链表和一个索引值，然后这个索引位置的结点值。</p>
-<p>例如:</p>
-<pre><code>Input:  1-&gt;10-&gt;30-&gt;14,  index = 2
-Output: 30  
-The node at index 2 is 30
-</code></pre><h4 id="算法"><a href="#算法" class="headerlink" title="算法:"></a>算法:</h4><pre><code>1. 初始化 count = 0
-2. 循环链表
-     a. 如果 count 等于输入的索引，就返回当前结点
-         node
-     b. 递增 count
-     c. 当前指针后移
-</code></pre><h4 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;assert.h&gt;
+        <p>变形一个 SortedMerge() 函数，带有两个链表参数, 每个链表都是按照升序排列, 然后把这两个链表合并成一个升序的链表。 SortedMerge() 应该返回一个全新的链表。新链表应该把两个链表的结点拼接起来。</p>
+<p>例如第一个链表是 5-&gt;10-&gt;15 第二个链表是 2-&gt;3-&gt;20, 然后 SortedMerge() 应该返回 2-&gt;3-&gt;5-&gt;10-&gt;15-&gt;20.</p>
+<p>有很多情况需要处理: ‘a’ 或者 ‘b’ 可能为空, 处理 ‘a’ 或 ‘b’ 过程中可能首先跑完某个, 最后的问题是开始结果是空, 然后通过‘a’ 和 ‘b’ 把它建立起来。</p>
+<h4 id="方法-1-使用仿制结点"><a href="#方法-1-使用仿制结点" class="headerlink" title="方法 1 (使用仿制结点)"></a>方法 1 (使用仿制结点)</h4><p>这里的策略是使用一个临时的仿制结点，作为结果链表的开始。Tail 指针总是表示结果链表的最后一个结点, 所以添加新结点很容易。<br>在结果链表是空的时候，仿制结点会给尾部指针一些指向作为初始化。仿制结点是有效的, 因为它只是临时的, 而且它在栈内分配。循环进行, 从 ‘a’ 或者 ‘b’ 移除一个结点, 然后添加到尾部。当完事后，结果就保存在 dummy.next.</p>
+<pre><code>/* C/C++ program to merge two sorted linked lists */
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;assert.h&gt;
 
 /* Link list node */
 struct Node
@@ -324,14 +319,83 @@ struct Node
     struct Node* next;
 };
 
-/* Given a reference (pointer to pointer) to the head
-    of a list and an int, push a new node on the front
-    of the list. */
+/* pull off the front node of the source and put it in dest */
+void MoveNode(struct Node** destRef, struct Node** sourceRef);
+
+/* Takes two lists sorted in increasing order, and splices
+   their nodes together to make one big sorted list which
+   is returned.  */
+struct Node* SortedMerge(struct Node* a, struct Node* b)
+{
+    /* a dummy first node to hang the result on */
+    struct Node dummy;
+
+    /* tail points to the last result node  */
+    struct Node* tail = &amp;dummy;
+
+    /* so tail-&gt;next is the place to add new nodes
+      to the result. */
+    dummy.next = NULL;
+    while (1)
+    {
+        if (a == NULL)
+        {
+            /* if either list runs out, use the
+               other list */
+            tail-&gt;next = b;
+            break;
+        }
+        else if (b == NULL)
+        {
+            tail-&gt;next = a;
+            break;
+        }
+        if (a-&gt;data &lt;= b-&gt;data)
+            MoveNode(&amp;(tail-&gt;next), &amp;a);
+        else
+            MoveNode(&amp;(tail-&gt;next), &amp;b);
+
+        tail = tail-&gt;next;
+    }
+    return(dummy.next);
+}
+
+/* UTILITY FUNCTIONS */
+/* MoveNode() function takes the node from the front of the
+   source, and move it to the front of the dest.
+   It is an error to call this with the source list empty.
+
+   Before calling MoveNode():
+   source == {1, 2, 3}
+   dest == {1, 2, 3}
+
+   Affter calling MoveNode():
+   source == {2, 3}
+   dest == {1, 1, 2, 3} */
+void MoveNode(struct Node** destRef, struct Node** sourceRef)
+{
+    /* the front source node  */
+    struct Node* newNode = *sourceRef;
+    assert(newNode != NULL);
+
+    /* Advance the source pointer */
+    *sourceRef = newNode-&gt;next;
+
+    /* Link the old dest off the new node */
+    newNode-&gt;next = *destRef;
+
+    /* Move dest to point to the new node */
+    *destRef = newNode;
+}
+
+
+/* Function to insert a node at the beginging of the
+   linked list */
 void push(struct Node** head_ref, int new_data)
 {
     /* allocate node */
     struct Node* new_node =
-            (struct Node*) malloc(sizeof(struct Node));
+        (struct Node*) malloc(sizeof(struct Node));
 
     /* put in the data  */
     new_node-&gt;data  = new_data;
@@ -343,121 +407,105 @@ void push(struct Node** head_ref, int new_data)
     (*head_ref)    = new_node;
 }
 
-/* Takes head pointer of the linked list and index
-    as arguments and return data at index*/
-int GetNth(struct Node* head, int index)
+/* Function to print nodes in a given linked list */
+void printList(struct Node *node)
 {
-    struct Node* current = head;
-    int count = 0; /* the index of the node we&apos;re currently
-                  looking at */
-    while (current != NULL)
+    while (node!=NULL)
     {
-       if (count == index)
-          return(current-&gt;data);
-       count++;
-       current = current-&gt;next;
+        printf(&quot;%d &quot;, node-&gt;data);
+        node = node-&gt;next;
     }
-
-    /* if we get to this line, the caller was asking
-       for a non-existent element so we assert fail */
-    assert(0);              
 }
 
-/* Drier program to test above function*/
+/* Drier program to test above functions*/
 int main()
 {
     /* Start with the empty list */
-    struct Node* head = NULL;
+    struct Node* res = NULL;
+    struct Node* a = NULL;
+    struct Node* b = NULL;
 
-    /* Use push() to construct below list
-     1-&gt;12-&gt;1-&gt;4-&gt;1  */
-    push(&amp;head, 1);
-    push(&amp;head, 4);
-    push(&amp;head, 1);
-    push(&amp;head, 12);
-    push(&amp;head, 1);  
+    /* Let us create two sorted linked lists to test
+      the functions
+       Created lists, a: 5-&gt;10-&gt;15,  b: 2-&gt;3-&gt;20 */
+    push(&amp;a, 15);
+    push(&amp;a, 10);
+    push(&amp;a, 5);
 
-    /* Check the count function */
-    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
-    getchar();
+    push(&amp;b, 20);
+    push(&amp;b, 3);
+    push(&amp;b, 2);
+
+    /* Remove duplicates from linked list */
+    res = SortedMerge(a, b);
+
+    printf(&quot;Merged Linked List is: \n&quot;);
+    printList(res);
+
+    return 0;
 }
-
-Output:
-Element at index 3 is 4
-</code></pre><h4 id="时间复杂度-O-n"><a href="#时间复杂度-O-n" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4><h4 id="方法-2-使用递归"><a href="#方法-2-使用递归" class="headerlink" title="方法 2- 使用递归"></a>方法 2- 使用递归</h4><h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法:"></a>算法:</h4><pre><code>getnth(node,n)
-1. 初始化 count = 1
-2. if count == n
-     return node-&gt;data
-3. else
-    return getnth(node-&gt;next,n-1)
-</code></pre><h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现:"></a>实现:</h4><pre><code>// C program to find n&apos;th node in linked list 
-// using recursion
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-/* Link list node */
-struct Node
+</code></pre><p>#<br>    输出 :</p>
+<pre><code>Merged Linked List is: 
+2 3 5 10 15 20 
+</code></pre><h4 id="方法-2-使用本地引用"><a href="#方法-2-使用本地引用" class="headerlink" title="方法 2 (使用本地引用)"></a>方法 2 (使用本地引用)</h4><p>这个方案在结构上跟上面的很相似, 但是它没有使用仿制结点。替代方案是, 它维护了一个结构体 node** 指针, lastPtrRef 这指针总是指向结果链表的最后一个结点。这个方式解决了仿制结点解决的问题 — 处理了结果链表为空的情况。</p>
+<pre><code>struct Node* SortedMerge(struct Node* a, struct Node* b) 
 {
-    int data;
-    struct Node* next;
-};
+  struct Node* result = NULL;
 
-/*  Given a reference (pointer to pointer) to 
-    the head of a list and an int, push a 
-    new node on the front of the list. */
-void push(struct Node** head_ref, int new_data)
-{
-    /* allocate node */
-    struct Node* new_node =
-            (struct Node*) malloc(sizeof(struct Node));
+  /* point to the last result pointer */
+  struct Node** lastPtrRef = &amp;result; 
 
-    /* put in the data */
-    new_node-&gt;data = new_data;
+  while(1) 
+  {
+    if (a == NULL) 
+    {
+      *lastPtrRef = b;
+       break;
+    }
+    else if (b==NULL) 
+    {
+       *lastPtrRef = a;
+       break;
+    }
+    if(a-&gt;data &lt;= b-&gt;data) 
+    {
+      MoveNode(lastPtrRef, &amp;a);
+    }
+    else
+    {
+      MoveNode(lastPtrRef, &amp;b);
+    }
 
-    /* link the old list off the new node */
-    new_node-&gt;next = (*head_ref);
-
-    /* move the head to point to the new node */
-    (*head_ref) = new_node;
+    /* tricky: advance to point to the next &quot;.next&quot; field */
+    lastPtrRef = &amp;((*lastPtrRef)-&gt;next); 
+  }
+  return(result);
 }
-
-/* Takes head pointer of the linked list and index
-    as arguments and return data at index*/
-int GetNth(struct Node *head,int n)
+</code></pre><h4 id="方法-3-使用递归"><a href="#方法-3-使用递归" class="headerlink" title="方法 3 (使用递归)"></a>方法 3 (使用递归)</h4><p>递归的代码比迭代代码更加清晰。你可能不太想使用递归方法，因为它会随着链表的长度成比例的使用栈空间。</p>
+<pre><code>struct Node* SortedMerge(struct Node* a, struct Node* b) 
 {
-    int count = 1;
+  struct Node* result = NULL;
 
-    //if count equal too n return node-&gt;data
-    if(count == n)
-    return head-&gt;data;
+  /* Base cases */
+  if (a == NULL) 
+     return(b);
+  else if (b==NULL) 
+     return(a);
 
-    //recursively decrease n and increase 
-    // head to next pointer 
-    return GetNth(head-&gt;next, n-1); 
+  /* Pick either a or b, and recur */
+  if (a-&gt;data &lt;= b-&gt;data) 
+  {
+     result = a;
+     result-&gt;next = SortedMerge(a-&gt;next, b);
+  }
+  else
+  {
+     result = b;
+     result-&gt;next = SortedMerge(a, b-&gt;next);
+  }
+  return(result);
 }
-
-/* Drier program to test above function*/
-int main()
-{
-     /* Start with the empty list */
-    struct Node* head = NULL;
-
-    /* Use push() to construct below list
-     1-&gt;12-&gt;1-&gt;4-&gt;1  */
-    push(&amp;head, 1);
-    push(&amp;head, 4);
-    push(&amp;head, 1);
-    push(&amp;head, 12);
-    push(&amp;head, 1);  
-
-    /* Check the count function */
-    printf(&quot;Element at index 3 is %d&quot;, GetNth(head, 3));  
-    getchar();
-}
-
-Output:
-Element at index 3 is 1
-</code></pre><h4 id="时间复杂度-O-n-1"><a href="#时间复杂度-O-n-1" class="headerlink" title="时间复杂度: O(n)"></a>时间复杂度: O(n)</h4>
+</code></pre>
       
     </div>
     
@@ -481,8 +529,8 @@ Element at index 3 is 1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/链表第6课（交换结点而不交换数据）/" rel="next" title="链表 | 第6课（交换结点而不交换数据）">
-                <i class="fa fa-chevron-left"></i> 链表 | 第6课（交换结点而不交换数据）
+              <a href="/2018/03/20/链表第10课（查找链表中的循环）/" rel="next" title="链表 | 第10课（查找链表中的循环）">
+                <i class="fa fa-chevron-left"></i> 链表 | 第10课（查找链表中的循环）
               </a>
             
           </div>
@@ -490,10 +538,6 @@ Element at index 3 is 1
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/12/链表第8课输出链表的中间结点值/" rel="prev" title="链表 | 第8课（输出链表的中间结点值）">
-                链表 | 第8课（输出链表的中间结点值） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +658,7 @@ Element at index 3 is 1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2-使用递归"><span class="nav-number">4.</span> <span class="nav-text">方法 2- 使用递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法-1"><span class="nav-number">5.</span> <span class="nav-text">算法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-1"><span class="nav-number">6.</span> <span class="nav-text">实现:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度-O-n-1"><span class="nav-number">7.</span> <span class="nav-text">时间复杂度: O(n)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1-使用仿制结点"><span class="nav-number">1.</span> <span class="nav-text">方法 1 (使用仿制结点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2-使用本地引用"><span class="nav-number">2.</span> <span class="nav-text">方法 2 (使用本地引用)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-3-使用递归"><span class="nav-number">3.</span> <span class="nav-text">方法 3 (使用递归)</span></a></li></ol></div>
             
 
           </div>
